@@ -1,0 +1,49 @@
+# basic
+title: Daily
+subtitle: Minimalism, simplicity and refined details
+favicon: https://avatars0.githubusercontent.com/u/31090575?s=200&v=4
+avatar: images/avatar.png
+# banner_small: images/banner-small.png
+# banner_large: images/banner-large.png
+logo: https://avatars0.githubusercontent.com/u/31090575?s=200&v=4
+
+# disqus
+#disqus_shortname: drakeleung
+
+highlight:
+  enable: true
+  line_number: false
+  auto_detect: false
+  tab_replace:
+
+# nav #
+nav:
+  home: .
+  archive: archives
+  about: about
+  # rss: atom.xml
+
+# hexo-renderer-sass
+node_sass:
+  outputStyle: nested
+  precision: 5
+  sourceComments: false
+
+# Default post title
+default_post_title: Untitled
+
+# social
+social:
+  github: https://github.com/BBT-FE/blog
+  # weibo: http://weibo.com/10010800
+  # mail: mailto:gallenhu@foxmail.com
+  # twitter: https://twitter.com/GallenHu
+
+# widget
+#   title: 标题
+#   content: 内容
+widget:
+  title: 关于本站
+  content: 分享生活中的灵感与创意，鼓励阅读，不读书则愚。
+
+footer: Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with Theme <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank">Daily</a>
