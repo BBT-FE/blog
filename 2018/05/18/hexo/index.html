@@ -148,32 +148,13 @@
 <li>域名（即网址，类似于-<a href="http://www.taobao.com-的东西）" target="_blank" rel="noopener">www.taobao.com-的东西）</a></li>
 </ol>
 <h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><p>首先呢，你要先确定你是否已经安装git和node<br>分别在终端中输入 git 和 node-v进行查看<br>如果你没有安装，那就去百度安装教程，安装完在看接下来步骤，没有准备看了也白看😕</p>
-<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>在电脑终端或者Git中输入命令<br><code>npm install -g hexo</code><br>注：npm 这个是node包管理器，一般来说只要你安装node，它就存在了，</p>
-<p>然后依次执行：</p>
-<ul>
-<li>初始化Hexo: hexo init</li>
-<li>生成静态页面：hexo generate 或者 hexo g</li>
-<li><p>启动服务器：hexo server 或者 hexo s </p>
-<ul>
-<li>注意：服务器默认是4000端口，若是安装了福昕阅读器可能端口冲突</li>
-<li>可以制定端口：hexo s -p5000</li>
-</ul>
-</li>
-<li><p>浏览器中访问：<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></p>
-</li>
-</ul>
-<h3 id="hexo主题"><a href="#hexo主题" class="headerlink" title="hexo主题"></a>hexo主题</h3><p>初次进入是属于默认的主题，你要是不喜欢呢，那只能自己配咯，</p>
-<ul>
-<li><p>在themes文件夹下，可以使用别人开发好的主题，这里有很多，我使用的是这一个: <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank" rel="noopener">https://github.com/GallenHu/hexo-theme-Daily</a></p>
-</li>
-<li><p>你需要 <code>git clone https://github.com/GallenHu/hexo-theme-Daily</code> 在你的themes文件夹下</p>
-</li>
-<li><p>然后呢在 根目录下的 _config.yml 文件中 改一下theme：值</p>
-</li>
-<li>其他的一些功能配置你参考你自己选的主题教程就好了</li>
-</ul>
-<p>当然如果你有志向，你可以自己写主题。</p>
-<h3 id="配置github仓库"><a href="#配置github仓库" class="headerlink" title="配置github仓库"></a>配置github仓库</h3><p>首先呢，你需要一个GitHub账号，然后创建新项目<br><img src="https://bbt-fe.github.io/blog/assets/img/repository.jpg" alt="avatar"></p>
+<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>在电脑终端或者Git中输入命令<br><figure class="highlight plain"><figcaption><span>install -g hexo```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">注：npm 这个是node包管理器，一般来说只要你安装node，它就存在了，</span><br><span class="line"></span><br><span class="line">然后依次执行：</span><br><span class="line"></span><br><span class="line">- 初始化Hexo: hexo init</span><br><span class="line">- 生成静态页面：hexo generate 或者 hexo g</span><br><span class="line">- 启动服务器：hexo server 或者 hexo s </span><br><span class="line">  - 注意：服务器默认是4000端口，若是安装了福昕阅读器可能端口冲突</span><br><span class="line">  - 可以制定端口：hexo s -p5000</span><br><span class="line"></span><br><span class="line">- 浏览器中访问：http://localhost:4000</span><br><span class="line"></span><br><span class="line">### hexo主题</span><br><span class="line">初次进入是属于默认的主题，你要是不喜欢呢，那只能自己配咯，</span><br><span class="line">- 在themes文件夹下，可以使用别人开发好的主题，这里有很多，我使用的是这一个: https://github.com/GallenHu/hexo-theme-Daily</span><br><span class="line"></span><br><span class="line">- 你需要 ``` git clone https://github.com/GallenHu/hexo-theme-Daily``` 在你的themes文件夹下</span><br><span class="line"></span><br><span class="line">- 然后呢在 根目录下的 _config.yml 文件中 改一下theme：值</span><br><span class="line">- 其他的一些功能配置你参考你自己选的主题教程就好了</span><br><span class="line"></span><br><span class="line">当然如果你有志向，你可以自己写主题。</span><br><span class="line"></span><br><span class="line">### 配置github仓库</span><br><span class="line">首先呢，你需要一个GitHub账号，然后创建新项目</span><br><span class="line">![avatar](https://github.com/BBT-FE/blog/blob/master/assets/img/repository.jpg)</span><br><span class="line">项目名称建议使用 name.github.io（name = 你的github名字）</span><br><span class="line">如果你电脑以前没有网GitHub上上传过任何代码，那么你需要配置ssh</span><br><span class="line"></span><br><span class="line">在git中命令</span><br></pre></td></tr></table></figure></p>
+<p>cd ~<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+<p>复制里边内容到你的GitHub  settings =&gt; 的 SSH key</p>
+<h3 id="配置本地hexo"><a href="#配置本地hexo" class="headerlink" title="配置本地hexo"></a>配置本地hexo</h3><p>打开根目录下的——config.yml,拉倒最下面<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https:<span class="comment">//github.com/bbt-fe/bbt-fe.github.io.git (你的仓库ssh地址)</span></span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<p>然后到根目录下 依次执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
+<h3 id="指向自己的域名"><a href="#指向自己的域名" class="headerlink" title="指向自己的域名"></a>指向自己的域名</h3><p> 首先你需要一个域名，购买域名的地方，你可以百度，我是在阿里云买的；<br> 其他的你百度吧，我懒，我不想写了</p>
 
         </div>
       </article>
