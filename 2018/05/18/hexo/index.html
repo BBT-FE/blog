@@ -16,7 +16,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="虐狗节"/>
+      <meta property="og:title" content="搭建博客"/>
   
   <!--Open Graph Description-->
   
@@ -33,7 +33,7 @@
 
   <!-- Title -->
   
-  <title>虐狗节 - BBT</title>
+  <title>搭建博客 - BBT</title>
 
 
   <link rel="shortcut icon" href="https://avatars0.githubusercontent.com/u/31090575?s=200&v=4">
@@ -121,11 +121,11 @@
         <!-- Title date & tags -->
         <div class="post-header">
           <h1 class="entry-title">
-            虐狗节
+            搭建博客
             
           </h1>
           <p class="posted-on">
-          2018-05-17
+          2018-05-18
           </p>
           <div class="tags-links">
             
@@ -134,20 +134,47 @@
                   出云
                 </a>
               
-                <a href="/blog/tags/云忆/" rel="tag">
-                  云忆
-                </a>
-              
-                <a href="/blog/tags/羽高/" rel="tag">
-                  羽高
-                </a>
-              
             
           </div>
         </div>
         <!-- Post Main Content -->
         <div class="entry-content">
-          
+          <p>hexo + github 搭建静态博客<br><a id="more"></a></p>
+<p>很多人都希望拥有一个方便自己分享知识、情感、感悟的地方，而博客这种东西无疑是不错的，本站采用的是 hexo + GitHub 搭建（比较简单，(⊙v⊙)），这个步骤呢，主要有下面几步</p>
+<ol>
+<li>环境搭建</li>
+<li>安装hexo</li>
+<li>github仓库（即项目存放地址）</li>
+<li>域名（即网址，类似于-<a href="http://www.taobao.com-的东西）" target="_blank" rel="noopener">www.taobao.com-的东西）</a></li>
+</ol>
+<h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><p>首先呢，你要先确定你是否已经安装git和node<br>分别在终端中输入 git 和 node-v进行查看<br>如果你没有安装，那就去百度安装教程，安装完在看接下来步骤，没有准备看了也白看😕</p>
+<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>在电脑终端或者Git中输入命令<br><code>npm install -g hexo</code><br>注：npm 这个是node包管理器，一般来说只要你安装node，它就存在了，</p>
+<p>然后依次执行：</p>
+<ul>
+<li>初始化Hexo: hexo init</li>
+<li>生成静态页面：hexo generate 或者 hexo g</li>
+<li><p>启动服务器：hexo server 或者 hexo s </p>
+<ul>
+<li>注意：服务器默认是4000端口，若是安装了福昕阅读器可能端口冲突</li>
+<li>可以制定端口：hexo s -p5000</li>
+</ul>
+</li>
+<li><p>浏览器中访问：<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></p>
+</li>
+</ul>
+<h3 id="hexo主题"><a href="#hexo主题" class="headerlink" title="hexo主题"></a>hexo主题</h3><p>初次进入是属于默认的主题，你要是不喜欢呢，那只能自己配咯，</p>
+<ul>
+<li><p>在themes文件夹下，可以使用别人开发好的主题，这里有很多，我使用的是这一个: <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank" rel="noopener">https://github.com/GallenHu/hexo-theme-Daily</a></p>
+</li>
+<li><p>你需要 <code>git clone https://github.com/GallenHu/hexo-theme-Daily</code> 在你的themes文件夹下</p>
+</li>
+<li><p>然后呢在 根目录下的 _config.yml 文件中 改一下theme：值</p>
+</li>
+<li>其他的一些功能配置你参考你自己选的主题教程就好了</li>
+</ul>
+<p>当然如果你有志向，你可以自己写主题。</p>
+<h3 id="配置github仓库"><a href="#配置github仓库" class="headerlink" title="配置github仓库"></a>配置github仓库</h3><p>首先呢，你需要一个GitHub账号，然后创建新项目<br><img src="https://bbt-fe.github.io/blog/assets/img/repository.jpg" alt="avatar"></p>
+
         </div>
       </article>
     </div>
@@ -165,13 +192,9 @@
     <!-- Pre or Next -->
     <div class="nav-links">
       
-        <div class="nav-previous">
-          <a href="/blog/2018/05/18/hexo/" rel="prev"><span class="meta-arraw meta-arraw-left"></span> Older Posts</a>
-        </div>
-      
       
         <div class="nav-next">
-          <a href="/blog/2018/05/16/FirstBlood/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
+          <a href="/blog/2018/05/17/520/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
         </div>
       
     </div>
