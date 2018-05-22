@@ -165,13 +165,20 @@
 </ul>
 <h3 id="hexo主题"><a href="#hexo主题" class="headerlink" title="hexo主题"></a>hexo主题</h3><p>初次进入是属于默认的主题，你要是不喜欢呢，那只能自己配咯，</p>
 <ul>
-<li><p>在themes文件夹下，可以使用别人开发好的主题，这里有很多，我使用的是这一个: <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank" rel="noopener">https://github.com/GallenHu/hexo-theme-Daily</a></p>
-</li>
-<li><p>你需要 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/GallenHu/hexo-theme-Daily</span><br><span class="line">``` </span><br><span class="line">在你的themes文件夹下</span><br><span class="line"></span><br><span class="line">- 然后呢在 根目录下的 _config.yml 文件中 改一下theme：值</span><br><span class="line">- 其他的一些功能配置你参考你自己选的主题教程就好了</span><br><span class="line"></span><br><span class="line">当然如果你有志向，你可以自己写主题。</span><br><span class="line"></span><br><span class="line">### 配置github仓库</span><br><span class="line">首先呢，你需要一个GitHub账号，然后创建新项目</span><br><span class="line">![avatar](https://github.com/BBT-FE/blog/blob/master/assets/img/repository.jpg)</span><br><span class="line">项目名称建议使用 name.github.io（name = 你的github名字）</span><br><span class="line">如果你电脑以前没有网GitHub上上传过任何代码，那么你需要配置ssh</span><br><span class="line"></span><br><span class="line">在git中命令</span><br></pre></td></tr></table></figure>
-</li>
+<li>在themes文件夹下，可以使用别人开发好的主题，这里有很多，我使用的是这一个: <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank" rel="noopener">https://github.com/GallenHu/hexo-theme-Daily</a></li>
 </ul>
-<p>cd ~<br>ssh-keygen<br>vim ~/.ssh/id_rsa.pub<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">复制里边内容到你的GitHub  settings =&gt; 的 SSH key</span><br><span class="line"></span><br><span class="line">### 配置本地hexo</span><br><span class="line"></span><br><span class="line">打开根目录下的——config.yml,拉倒最下面</span><br><span class="line">```js</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/bbt-fe/bbt-fe.github.io.git (你的仓库ssh地址)</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<p>你需要<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/GallenHu/hexo-theme-Daily</span><br></pre></td></tr></table></figure></p>
+<p>在你的themes文件夹下</p>
+<ul>
+<li>然后呢在 根目录下的 _config.yml 文件中 改一下theme：值</li>
+<li>其他的一些功能配置你参考你自己选的主题教程就好了</li>
+</ul>
+<p>当然如果你有志向，你可以自己写主题。</p>
+<h3 id="配置github仓库"><a href="#配置github仓库" class="headerlink" title="配置github仓库"></a>配置github仓库</h3><p>首先呢，你需要一个GitHub账号，然后创建新项目<br><img src="https://github.com/BBT-FE/blog/blob/master/assets/img/repository.jpg" alt="avatar"><br>项目名称建议使用 name.github.io（name = 你的github名字）<br>如果你电脑以前没有网GitHub上上传过任何代码，那么你需要配置ssh</p>
+<p>在git中命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">ssh-keygen</span><br><span class="line">vim ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+<p>复制里边内容到你的GitHub  settings =&gt; 的 SSH key</p>
+<h3 id="配置本地hexo"><a href="#配置本地hexo" class="headerlink" title="配置本地hexo"></a>配置本地hexo</h3><p>打开根目录下的——config.yml,拉倒最下面<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https:<span class="comment">//github.com/bbt-fe/bbt-fe.github.io.git (你的仓库ssh地址)</span></span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
 <p>然后到根目录下 依次执行</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 <h3 id="指向自己的域名"><a href="#指向自己的域名" class="headerlink" title="指向自己的域名"></a>指向自己的域名</h3><p> 首先你需要一个域名，购买域名的地方，你可以百度，我是在阿里云买的；<br> 其他的你百度吧，我懒，我不想写了</p>
