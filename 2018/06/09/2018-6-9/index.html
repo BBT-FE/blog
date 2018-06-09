@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="zhou zhou">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="微信授权登陆"/>
+  
+  <!--Open Graph Description-->
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="BBT"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>微信授权登陆 - BBT</title>
+
+
+  <link rel="shortcut icon" href="https://avatars0.githubusercontent.com/u/31090575?s=200&v=4">
+
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!----------------------------
+  https://github.com/GallenHu/hexo-theme-Daily
+
+ _____            _   _
+|  __ \          (_) | |
+| |  | |   __ _   _  | |  _   _
+| |  | |  / _` | | | | | | | | |
+| |__| | | (_| | | | | | | |_| |
+|_____/   \__,_| |_| |_|  \__, |
+                          __/ |
+                         |___/
+
+    --------------------------->
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="https://avatars0.githubusercontent.com/u/31090575?s=200&v=4" alt="BBT" height="60">
+        
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  archive
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  about
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            微信授权登陆
+            
+          </h1>
+          <p class="posted-on">
+          2018-06-09
+          </p>
+          <div class="tags-links">
+            
+              
+                <a href="/tags/出云/" rel="tag">
+                  出云
+                </a>
+              
+                <a href="/tags/vue/" rel="tag">
+                  vue
+                </a>
+              
+                <a href="/tags/登陆/" rel="tag">
+                  登陆
+                </a>
+              
+            
+          </div>
+        </div>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <!-- 引言（简介） -->
+<p>  vue项目 - 微信授权登陆<br><a id="more"></a></p>
+<!-- 详细内容 -->
+<p>微信授权登录，实质上通过code换取access_token</p>
+<p>因为我是做前端的，所以我这只写前端逻辑，webpack axios</p>
+<h3 id="通过cookie"><a href="#通过cookie" class="headerlink" title="通过cookie"></a>通过cookie</h3><p>本次cookie方式，授权实在后台处理，前端只涉及到去cookie值判断是否登陆</p>
+<ol>
+<li><p>cookie 方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// helper/util.js</span></span><br><span class="line"><span class="comment">/* eslint-disable*/</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> arr</span><br><span class="line">  <span class="keyword">let</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'(^| )'</span> + name + <span class="string">'=([^;]*)(;|$)'</span>)</span><br><span class="line">  <span class="keyword">if</span> (arr = <span class="built_in">document</span>.cookie.match(reg)) &#123;</span><br><span class="line">    <span class="keyword">return</span> (arr[<span class="number">2</span>])</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 设置cookie,增加到vue实例方便全局调用</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">setCookie</span> (<span class="params">cname, value, expiredays</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> exdate = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">  exdate.setDate(exdate.getDate() + expiredays)</span><br><span class="line">  <span class="built_in">document</span>.cookie = cname + <span class="string">'='</span> + <span class="built_in">escape</span>(value) + ((expiredays == <span class="literal">null</span>) ? <span class="string">''</span> : <span class="string">';expires='</span> + exdate.toGMTString())</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 删除cookie</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">delCookie</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> exp = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">  exp.setTime(exp.getTime() - <span class="number">1</span>)</span><br><span class="line">  <span class="keyword">var</span> cval = getCookie(name)</span><br><span class="line">  <span class="keyword">if</span> (cval != <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="built_in">document</span>.cookie = name + <span class="string">'='</span> + cval + <span class="string">';expires='</span> + exp.toGMTString()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>首先在页面跳转前做token判断，可以取到token则登陆，否则去授权<br>解释： ‘/api/user/login?url=’ + callbackUrl 这个地址是后台给的授权地址，应为这种方式是后台去做授权，所以说前端处理是比较方便的，就是简单的去判断cookie中是否有token，</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; getCookie &#125; <span class="keyword">from</span> <span class="string">'../helper/util'</span></span><br><span class="line"></span><br><span class="line">router.beforeEach(<span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> token = getCookie(<span class="string">'FLOW-AUTH-TOKEN'</span>)</span><br><span class="line">  <span class="keyword">if</span> (process.env.NODE_ENV === <span class="string">'production'</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!token) &#123;</span><br><span class="line">      <span class="comment">// 如果为获取到token去授权</span></span><br><span class="line">      <span class="keyword">let</span> callbackUrl = <span class="built_in">window</span>.location.hash</span><br><span class="line">      <span class="built_in">window</span>.location.href = <span class="string">'/api/user/login?url='</span> + callbackUrl</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      next()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    next()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="通过localStorage"><a href="#通过localStorage" class="headerlink" title="通过localStorage"></a>通过localStorage</h3><p>这种方式是通过前端请求接口去实现</p>
+<ol>
+<li>添加请求拦截，（这里也可以使用上面的 router.beforeEach((to, from, next){} 去实现），在这主要用请求拦截去实现</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加请求拦截</span></span><br><span class="line">axios.interceptors.request.use(<span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> AUTH_TOKEN = getItem(<span class="string">'AUTH_TOKEN'</span>)</span><br><span class="line">  <span class="keyword">if</span> (AUTH_TOKEN) &#123;</span><br><span class="line">    config.headers[<span class="string">'Authorization'</span>] = AUTH_TOKEN</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> config</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// Add filter retcode</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isOk</span>(<span class="params">retcode</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [</span><br><span class="line">    <span class="string">'2000000'</span>,</span><br><span class="line">    <span class="string">'1000006'</span></span><br><span class="line">  ].indexOf(retcode) &gt; <span class="number">-1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Add a response interceptor</span></span><br><span class="line">axios.interceptors.response.use(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> resp = response.data</span><br><span class="line">  <span class="keyword">let</span> retcode = resp.retcode</span><br><span class="line">  <span class="keyword">let</span> message = resp.message</span><br><span class="line">  <span class="keyword">if</span> (isOk(retcode)) &#123;</span><br><span class="line">    <span class="keyword">let</span> data = <span class="literal">null</span></span><br><span class="line">    <span class="keyword">if</span> (retcode === <span class="string">'2000000'</span>) &#123;</span><br><span class="line">      data = resp.data || resp</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      data = resp</span><br><span class="line">    &#125;</span><br><span class="line">    data.message = message</span><br><span class="line">    data.retcode = retcode</span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="built_in">Error</span>(response.data.msg || <span class="string">'服务异常'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;, (err) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> (err &amp;&amp; err.response) &#123;</span><br><span class="line">    <span class="keyword">let</span> retcode = err.response.data.retcode</span><br><span class="line">    <span class="keyword">if</span> (err.response.status === <span class="string">'401'</span> || err.response.status === <span class="string">'403'</span> || retcode === <span class="string">'1000006'</span>) &#123;</span><br><span class="line">      removeItem(<span class="string">'AUTH_TOKEN'</span>)</span><br><span class="line">      <span class="keyword">let</span> callbackUrl = <span class="built_in">encodeURIComponent</span>(<span class="built_in">window</span>.location.href)</span><br><span class="line">      <span class="built_in">window</span>.location.href = <span class="string">'/work-order-wechat/login.html#/login?from='</span> + callbackUrl</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">switch</span> (err.response.status) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">500</span>:</span><br><span class="line">      err.message = err.response.data.message || <span class="string">'系统异常'</span></span><br><span class="line">      err.retcode = retcode</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>在接口返回 401 403 100006的情况下跳转到登陆页，重新登陆</p>
+<ol start="2">
+<li>在登陆页授权登陆 ，接口返回token存到localStorage，<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// code返回正则匹配</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">parseUrl</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> code = <span class="regexp">/code=([^&amp;]+)/</span>.exec(url)</span><br><span class="line">  <span class="keyword">if</span> (code) &#123;</span><br><span class="line">    code = code[<span class="number">1</span>]</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> state = <span class="regexp">/state=([^&amp;]+)/</span>.exec(url)</span><br><span class="line">  <span class="keyword">if</span> (state) &#123;</span><br><span class="line">    state = <span class="built_in">decodeURIComponent</span>(state[<span class="number">1</span>])</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> referrer = <span class="regexp">/from=([^&amp;]+)/</span>.exec(url)</span><br><span class="line">  <span class="keyword">if</span> (referrer) &#123;</span><br><span class="line">    referrer = referrer[<span class="number">1</span>]</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    code,</span><br><span class="line">    state,</span><br><span class="line">    referrer</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 定义跳转微信授权 获取code</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">gotoWeixin</span>(<span class="params">state</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> url = <span class="keyword">await</span> askWeixinAuth(state).catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(err.msg))</span><br><span class="line">  <span class="built_in">window</span>.location.href = url</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 用户登录前  要验证用户是否进行过微信授权</span></span><br><span class="line">  <span class="keyword">async</span> created() &#123;</span><br><span class="line">    <span class="comment">// 解析url, 获取所需参数</span></span><br><span class="line">    <span class="keyword">let</span> params = parseUrl(<span class="built_in">window</span>.location.href)</span><br><span class="line">    <span class="comment">// URL 中没有code代表不是从微信跳转过来的, 需要去微信拿到code，拿到code后直接跳转换取access_token</span></span><br><span class="line">    <span class="keyword">if</span> (!params.code) &#123;</span><br><span class="line">      <span class="comment">// 传递授权后的回调地址, 跳转回来后code被携带到url参数中</span></span><br><span class="line">      gotoWeixin(params.referrer)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">// 如果有code, 则直接进行微信授权,换取access_token</span></span><br><span class="line">      weixinAuth(&#123;</span><br><span class="line">        code: params.code,</span><br><span class="line">        state: params.state</span><br><span class="line">      &#125;)</span><br><span class="line">      .then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (res.retcode === <span class="string">'2000000'</span>) &#123; <span class="comment">// 回调接口，如果数据库中存在用户信息，返回AUTH_TOKEN，否则是新用户，去注册</span></span><br><span class="line">          <span class="keyword">let</span> AUTH_TOKEN = res.token</span><br><span class="line">          setItem(<span class="string">'AUTH_TOKEN'</span>, AUTH_TOKEN)</span><br><span class="line">          <span class="keyword">let</span> url = params.state</span><br><span class="line">          <span class="keyword">if</span> (!url) &#123;</span><br><span class="line">            url = <span class="string">''</span></span><br><span class="line">          &#125;</span><br><span class="line">          <span class="built_in">window</span>.location.replace(url)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(res.msg)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">      .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 登陆接口</span></span><br><span class="line">  register() &#123;</span><br><span class="line">      Bind().then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> params = parseUrl(<span class="built_in">window</span>.location.href)</span><br><span class="line">        <span class="keyword">if</span> (res.retcode === <span class="string">'2000000'</span>) &#123;</span><br><span class="line">          <span class="keyword">let</span> AUTH_TOKEN = res.token</span><br><span class="line">          setItem(<span class="string">'AUTH_TOKEN'</span>, AUTH_TOKEN) <span class="comment">// 返回token</span></span><br><span class="line">          <span class="keyword">this</span>.$toast.show(<span class="string">'登陆成功'</span>)</span><br><span class="line">          <span class="keyword">let</span> url = params.state</span><br><span class="line">          <span class="keyword">if</span> (!url) &#123;</span><br><span class="line">            url = <span class="string">'https://kuaifang.test.zhongfl.com/work-order-wechat/#/entry'</span></span><br><span class="line">          &#125;</span><br><span class="line">          <span class="built_in">window</span>.location.href = url</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(res.msg)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">      .catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err.msg)</span><br><span class="line">      &#125;)</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+        </div>
+      </article>
+    </div>
+    <!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+    <!-- Pre or Next -->
+    <div class="nav-links">
+      
+      
+        <div class="nav-next">
+          <a href="/2018/05/18/hexo/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
+      
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer-widgets -->
+<div class="footer-widgets">
+  <div class="row inside-wrapper">
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">关于本站</h1>
+        <div class="custom-widget-content">
+          
+          分享生活中的灵感与创意，鼓励阅读，不读书则愚。
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Contact</h1>
+        <div class="widget-text">
+          
+            
+              <a href="https://github.com/BBT-FE/blog" class="icon icon-github" target="_blank">github</a>
+            
+          
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Search</h1>
+        <div class="widget-text">
+          <form onSubmit="return appDaily.bindToggleButton('')">
+            <p>
+              <input type="text" placeholder="search..." id="homeSearchInput">
+            </p>
+            <!-- <input type="submit" value="GO"> -->
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>BBT &copy; 2018</span>
+    
+      <span class="split">|</span>
+      <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with Theme <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank">Daily</a></span>
+    
+  </p>
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+
+
+</body>
+
+</html>
