@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="zhou zhou">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="Promise"/>
+  
+  <!--Open Graph Description-->
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="BBT"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>Promise - BBT</title>
+
+
+  <link rel="shortcut icon" href="https://avatars0.githubusercontent.com/u/31090575?s=200&v=4">
+
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!----------------------------
+  https://github.com/GallenHu/hexo-theme-Daily
+
+ _____            _   _
+|  __ \          (_) | |
+| |  | |   __ _   _  | |  _   _
+| |  | |  / _` | | | | | | | | |
+| |__| | | (_| | | | | | | |_| |
+|_____/   \__,_| |_| |_|  \__, |
+                          __/ |
+                         |___/
+
+    --------------------------->
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="https://avatars0.githubusercontent.com/u/31090575?s=200&v=4" alt="BBT" height="60">
+        
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  archive
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  about
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            Promise
+            
+          </h1>
+          <p class="posted-on">
+          2018-09-26
+          </p>
+          <div class="tags-links">
+            
+              
+                <a href="/tags/出云/" rel="tag">
+                  出云
+                </a>
+              
+                <a href="/tags/es6/" rel="tag">
+                  es6
+                </a>
+              
+            
+          </div>
+        </div>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <!-- 引言（简介） -->
+<p>  es6 - Promise理解<br><a id="more"></a></p>
+<!-- 详细内容 -->
+<ul>
+<li><p>promise: 是异步编程的一种解决方案，可以使异步代码看起来如同步般清晰易读，从而从回调地狱中解脱出来， promise是一个关联了执行任务的承诺，当你的任务完成时，会根据任务的成功与否，执行相关的操作。所以创建promise对象的时候，构造函数中需要传递一个函数类型的参数，来作为与此promise对象关联的任务。so promise构造函数定义 如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Promise</span>(<span class="params">resolver</span>) </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>promise两个特点<ul>
+<li>对象的状态不收外界影响， promise 对象的三种状态， 创建的promise对象处于pending状态，pending状态可以转换为fullfilled和rejected,只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态<ul>
+<li>pending promise对象处于等待状态</li>
+<li>fullfilled 执行成功状态</li>
+<li>rejected 执行失败状态</li>
+</ul>
+</li>
+<li>一但状态改变，就不会再变 。 Promise对象的状态改变，只有两种可能：从pending变为fulfilled和从pending变为rejected。只要这两种情况发生，状态就凝固了，能逆向转化，且转化过程只能有一次，即resolve或reject后你能再resolve和reject，即，如果你错过了它，再去监听是得不到结果的。</li>
+</ul>
+</li>
+<li><p>promise 用法</p>
+<ul>
+<li>promise对象是一个 构造函数，用来生成promise实例；</li>
+<li><p>promise 对象实例： </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>( <span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (异步操作成功) &#123;</span><br><span class="line">    resolve(value);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    reject(error)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Promise 构造函数接受一个函数做为参数，该函数的两个参数分别是resolve和reject，他们是两个函数，由JavaScript引擎提供，不用自己部署。</p>
+</li>
+<li>resolve函数的作用是， 将promise对象的状态从“pending”变为“resolved”，在一步操作成功时调用，并将异步操作的结果，作为参数传递出去；</li>
+<li><p>reject函数的作用是，将Promise对象的状态从“未完成”变为“失败”（即从“pending”变为“rejected”),在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。</p>
+</li>
+<li><p>promise实例生成后，可以用then方法分别指定resolve状态和rejected状态的回调函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> <span class="built_in">Promise</span>(test)</span><br><span class="line"><span class="keyword">var</span> p2 = p1.then(<span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'成功:'</span> + result)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">var</span> p3 = p2.catch (<span class="function"><span class="keyword">function</span> (<span class="params">reason</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'小姐姐不要我了'</span>, + reason)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 变量&lt;b&gt;p1&lt;/b&gt;是一个promise对象，它负责执行test函数。由于test函数在内部是异步执行的，当test函数执行成功时，我们告诉Promise对象：</span></span><br><span class="line">  </span><br><span class="line"><span class="comment">// 如果成功，执行这个函数</span></span><br><span class="line"></span><br><span class="line">P1.then( <span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'成功:'</span> + result)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 当test函数执行失败时，我们告诉Promise对象</span></span><br><span class="line"></span><br><span class="line">P2.catch( <span class="function"><span class="keyword">function</span>(<span class="params">reason</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'小姐姐不要我了：'</span> + reason)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 串联起来就是</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(test).then( <span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'成功：'</span> + result)</span><br><span class="line">&#125;).catch( <span class="function"><span class="keyword">function</span> (<span class="params">reason</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'小姐姐不要我了'</span> + reason)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果then方法返回的是一个新的Promise实例（不是原来那个Promise实例），因此可以采用链式写法，即then方法后面再调用另一个then方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">P1.then(<span class="function"><span class="keyword">function</span> (<span class="params">json</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> json;</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">post</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//依次指定了两个回调函数，第一个回到函数完成以后会将返回结果作为参数，传入第二个回调函数。采用链式的then，可以指定一组按照次序调用的回调函数。这时前一个回调函数，有可能返回的还是一个promise对象(即有异步操作)，这时后一个回调函数，就会等待该promise对象的状态发生变化，才会被调用。</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>promise缺点 </p>
+<ul>
+<li>无法取消promise，一旦新建它就会立即执行无法中途取消；</li>
+<li>如果不设置回调函数， Promise内部抛出错误，不会反应到外部；</li>
+<li>当处于 pending 状态时，无法得知目前进展到那一阶段（刚开始还是即将完成）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </article>
+    </div>
+    <!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+    <!-- Pre or Next -->
+    <div class="nav-links">
+      
+      
+        <div class="nav-next">
+          <a href="/2018/06/09/translate/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
+      
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer-widgets -->
+<div class="footer-widgets">
+  <div class="row inside-wrapper">
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">关于本站</h1>
+        <div class="custom-widget-content">
+          
+          分享生活中的灵感与创意，鼓励阅读，不读书则愚。
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Contact</h1>
+        <div class="widget-text">
+          
+            
+              <a href="https://github.com/BBT-FE/blog" class="icon icon-github" target="_blank">github</a>
+            
+          
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Search</h1>
+        <div class="widget-text">
+          <form onSubmit="return appDaily.bindToggleButton('')">
+            <p>
+              <input type="text" placeholder="search..." id="homeSearchInput">
+            </p>
+            <!-- <input type="submit" value="GO"> -->
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>BBT &copy; 2018</span>
+    
+      <span class="split">|</span>
+      <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with Theme <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank">Daily</a></span>
+    
+  </p>
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+
+
+</body>
+
+</html>
