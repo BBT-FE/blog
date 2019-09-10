@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="zhou zhou">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="vuex"/>
+  
+  <!--Open Graph Description-->
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="BBT"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>vuex - BBT</title>
+
+
+  <link rel="shortcut icon" href="https://avatars0.githubusercontent.com/u/31090575?s=200&v=4">
+
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!----------------------------
+  https://github.com/GallenHu/hexo-theme-Daily
+
+ _____            _   _
+|  __ \          (_) | |
+| |  | |   __ _   _  | |  _   _
+| |  | |  / _` | | | | | | | | |
+| |__| | | (_| | | | | | | |_| |
+|_____/   \__,_| |_| |_|  \__, |
+                          __/ |
+                         |___/
+
+    --------------------------->
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="https://avatars0.githubusercontent.com/u/31090575?s=200&v=4" alt="BBT" height="60">
+        
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  archive
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  about
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            vuex
+            
+          </h1>
+          <p class="posted-on">
+          2019-09-10
+          </p>
+          <div class="tags-links">
+            
+              
+                <a href="/tags/出云/" rel="tag">
+                  出云
+                </a>
+              
+            
+          </div>
+        </div>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <p>vue - vuex 学习<br><a id="more"></a></p>
+<h4 id="1、vuex"><a href="#1、vuex" class="headerlink" title="1、vuex"></a>1、vuex</h4><p>  vuex 就是使用一个 store 对象来包含所有的应用层级状态，也就是数据的来源<br>  例如：<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> moduleA = &#123;</span><br><span class="line">  state: &#123; ... &#125;,</span><br><span class="line">  mutations: &#123; ... &#125;,</span><br><span class="line">  actions: &#123; ... &#125;,</span><br><span class="line">  getters: &#123; ... &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> moduleA = &#123;</span><br><span class="line">  state: &#123; ... &#125;,</span><br><span class="line">  mutations: &#123; ... &#125;,</span><br><span class="line">  actions: &#123; ... &#125;,</span><br><span class="line">  getters: &#123; ... &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  modules: &#123;</span><br><span class="line">    a: moduleA,</span><br><span class="line">    B: moduleB</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">store.state.a =&gt; moduleA的状态</span><br><span class="line">store.state.b =&gt; moduleB的状态</span><br></pre></td></tr></table></figure></p>
+<h4 id="2、store-的四个属性：state，-getters-mutations-actions"><a href="#2、store-的四个属性：state，-getters-mutations-actions" class="headerlink" title="2、store 的四个属性：state， getters, mutations, actions"></a>2、store 的四个属性：state， getters, mutations, actions</h4><p>  state: state 上存放的，说的简单一些就是变量，也就是所谓的状态。没有使用 state 的时候，我们都是直接在 data 中进行初始化的，但是有了 state 之后，我们就把 data 上的数据转移到 state 上去了。当一个组件需要获取多个状态时候，将这些状态都声明为计算属性会有些重复和冗余。为了解决这个问题，我们可以使用 mapState 辅助函数帮助我们生成计算属性，<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; mapState &#125; <span class="keyword">from</span> <span class="string">'vuwx'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  </span><br><span class="line">  computed: mapState(&#123;</span><br><span class="line"></span><br><span class="line">    count: <span class="function"><span class="params">state</span> =&gt;</span> state.count,</span><br><span class="line"></span><br><span class="line">    countAlias: <span class="string">'count'</span>,</span><br><span class="line"></span><br><span class="line">    countPlusLocalState (state) &#123;</span><br><span class="line">      <span class="keyword">return</span> state.count + <span class="keyword">this</span>.localCount</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 其实就是把 state 上保存的变量转移到计算属性上。当映射的计算属性的名称与 state 的子节点名称相同时，我们也可以给 mapState 传一个字符串数组。</span></span><br><span class="line"></span><br><span class="line">computed: mapState([</span><br><span class="line">  <span class="comment">// 映射 this.count 为 store.state.count</span></span><br><span class="line">  <span class="string">'count'</span></span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"><span class="comment">//为了更好地理解这个函数的作用，我们可以看看它的源代码。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">mapState</span>(<span class="params">state</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> res = &#123;&#125;</span><br><span class="line">  normalizeMap(state).forEach(<span class="function">(<span class="params">&#123; key, val &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">    res[key] = <span class="function"><span class="keyword">function</span> <span class="title">mappedState</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">typeof</span> val === <span class="string">'function'</span> ? val.call(<span class="keyword">this</span>, <span class="keyword">this</span>.$route.state, <span class="keyword">this</span>.$route.getters) : <span class="keyword">this</span>.$store.state[val]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">normalizeMap</span> (<span class="params">map</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Array</span>.isArray(map) ? map.map(<span class="function"><span class="params">key</span> =&gt;</span> (&#123; key, <span class="attr">val</span>: key &#125;)) : <span class="built_in">Object</span>.keys(map).map(<span class="function"><span class="params">key</span> =&gt;</span> (&#123; key, <span class="attr">val</span>: map[key] &#125;))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">mapstate 即可以接受对象，也可以接受数组。最终返回的是一个对象。并且 res[key] 的值都是来于 store,这也是映射</span><br></pre></td></tr></table></figure></p>
+<p>  getters: getters上简单来说就是存放一些公共函数供组件调用。getters 会暴露为 store.getters 对象，也就是说可以通过 this.$store.getters.valueName对派生出来的状态进行访问来进行相应的调用。mapGetters 辅助函数仅仅是将 store 中的 getters 映射到局部计算属性，其实也就是从 getters 中获取对应的属性，跟解构类似<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; mapGetters &#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  computed: &#123;</span><br><span class="line">  <span class="comment">// 使用对象展开运算符将 getter 混入 computed 对象中</span></span><br><span class="line">    ...mapGetters([</span><br><span class="line">      <span class="string">'doneTodosCount'</span>,</span><br><span class="line">      <span class="string">'anotherGetter'</span>,</span><br><span class="line">      <span class="comment">// ...</span></span><br><span class="line">    ])</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果你想将一个 getter 属性另取一个名字，使用对象形式：</span></span><br><span class="line">mapGetters(&#123;</span><br><span class="line">  <span class="comment">// 映射 `this.doneCount` 为 `store.getters.doneTodosCount`</span></span><br><span class="line">  doneCount: <span class="string">'doneTodosCount'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>  mutations: Mutations的中文意思是“变化”，利用它可以更改状态。事实上，更改 Vuex 的 store 中的状态的唯一方法就是提交 （commit）mutation。不过，mutation触发状态改变的方式有一点特别，所谓commit一个mutation，实际是像触发一个事件一样，传入一个mutation的类型以及携带一些数据（称作payload，载荷）。<br>  <code>注意： 一条重要的原则就是要记住 mutation 必须是同步函数。</code><br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">    即：</span><br><span class="line"></span><br><span class="line">    mutations: &#123;   <span class="comment">//放置mutations方法</span></span><br><span class="line">      increment(state, payload) &#123;</span><br><span class="line">        <span class="comment">//在这里改变state中的数据</span></span><br><span class="line">        state.count = payload.number;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// commit一个mutation在代码层面怎么表示呢？</span></span><br><span class="line">    <span class="keyword">this</span>.$store.commit(<span class="string">'increment'</span>, &#123;</span><br><span class="line">      amount: <span class="number">10</span></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">或者： </span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">      state: &#123;</span><br><span class="line">        count: <span class="number">1</span></span><br><span class="line">      &#125;,</span><br><span class="line">      mutations: &#123;</span><br><span class="line">        increment (state) &#123;</span><br><span class="line">          <span class="comment">// 变更状态</span></span><br><span class="line">          state.count++</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    store.commit(<span class="string">'increment'</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 当 mutation 事件类型比较多的时候，我们可以使用常量替代 mutation 事件类型。同时把这些常量放在单独的文件中可以让我们的代码合作者对整个 app 包含的 mutation 一目了然：</span></span><br><span class="line">  <span class="comment">// mutation-types.js</span></span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">const</span> SOME_MUTATION = <span class="string">'SOME_MUTATION'</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// store.js</span></span><br><span class="line">  <span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line">  <span class="keyword">import</span> &#123; SOME_MUTATION &#125; <span class="keyword">from</span> <span class="string">'./mutation-types.js'</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.State(&#123;</span><br><span class="line">    state: &#123; ... &#125;,</span><br><span class="line">    mutations: &#123;</span><br><span class="line">       <span class="comment">// 我们可以使用 ES2015 风格的计算属性命名功能来使用一个常量作为函数名</span></span><br><span class="line">      </span><br><span class="line">      [SOME_MUTATION] (state) &#123;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 除了这种使用 this.$store.commit('xxx') 提交 mutation的方式之外，还有一种方式，即使用 mapMutations 辅助函数将组件中的 methods 映射为 this.$store.commit。例如：</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">import</span> &#123; mapMutations &#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    methods: &#123;</span><br><span class="line">      ...mapMutations([</span><br><span class="line">        <span class="string">'increment'</span>, <span class="comment">// 将 `this.increment()` 映射为 `this.$store.commit('increment')`</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// `mapMutations` 也支持载荷：</span></span><br><span class="line">        <span class="string">'incrementBy'</span> <span class="comment">// 将 `this.incrementBy(amount)` 映射为 `this.$store.commit('incrementBy', amount)`</span></span><br><span class="line">      ]),</span><br><span class="line">      ...mapMutations(&#123;</span><br><span class="line">        add: <span class="string">'increment'</span> <span class="comment">// 将 `this.add()` 映射为 `this.$store.commit('increment')`</span></span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>  actions: 前面说了，mutation 像事件注册，需要相应的触发条件。而 Action 就那个管理触发条件的。<br>  Action 类似于 mutation，不同在于：Action 提交的是 mutation，而不是直接变更状态。Action 可以包含任意异步操作。 </p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br></pre></td><td class="code"><pre><span class="line">  actions: &#123;</span><br><span class="line">    increment (context) &#123;</span><br><span class="line">      context.commit(<span class="string">'increment'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Action 函数接受一个与 store 实例具有相同方法和属性的 context 对象，因此你可以调用 context.commit 提交一个 mutation，或者通过 context.state 和 context.getters 来获取 state 和 getters。</span></span><br><span class="line">  <span class="comment">// mutation处理函数中所做的事情是改变state，而action处理函数中所做的事情则是commit mutation。</span></span><br><span class="line">  <span class="comment">// 实践中，我们会经常会用到 ES2015 的 参数解构 来简化代码（特别是我们需要调用 commit 很多次的时候）：</span></span><br><span class="line">  actions: &#123;</span><br><span class="line">    increment (&#123; commit &#125;) &#123;</span><br><span class="line">      commit(<span class="string">'increment'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 还记得我们前面说过 mutation 像事件类型吗？因此需要我们给定某个动作来进行触发。而这就是分发 action。Action 通过 store.dispatch 方法触发：</span></span><br><span class="line"></span><br><span class="line">  store.dispatch(<span class="string">'increment'</span>)</span><br><span class="line"></span><br><span class="line">或者：</span><br><span class="line">  <span class="comment">// 所传的两个参数一个是要触发的action的类型，一个是所携带的数据（payload），类似于上文所讲的commit mutation时所传的那两个参数。</span></span><br><span class="line">  <span class="keyword">this</span>.$store.dispatch(actionType, payload)。</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 以载荷形式分发</span></span><br><span class="line">  <span class="keyword">this</span>.$store.dispatch(<span class="string">'incrementAsync'</span>, &#123;</span><br><span class="line">    amount: <span class="number">10</span></span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  或</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 以对象形式分发</span></span><br><span class="line">  <span class="keyword">this</span>.$store.dispatch(&#123;</span><br><span class="line">    type: <span class="string">'incrementAsync'</span>,</span><br><span class="line">    amount: <span class="number">10</span></span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">mapActions: </span><br><span class="line"></span><br><span class="line">  <span class="comment">// 你在组件中使用 this.$store.dispatch('xxx') 分发 action，或者使用 mapActions 辅助函数将组件的 methods 映射为 store.dispatch 调用（需要先在根节点注入 store）：</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">import</span> &#123; mapActions &#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    methods: &#123;</span><br><span class="line">      ...mapActions([</span><br><span class="line">        <span class="string">'increment'</span> <span class="comment">// 映射 this.increment() 为 this.$store.dispatch('increment')</span></span><br><span class="line">      ]),</span><br><span class="line">      ...mapActions(&#123;</span><br><span class="line">        add: <span class="string">'increment'</span> <span class="comment">// 映射 this.add() 为 this.$store.dispatch('increment')</span></span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 这句话意思其实是，当你使用了 mapActions， 你就不需要再次使用 this.$store.dispatch('xxx')，当你没使用的话，你可以需要手动去分法。比如下面的代码：</span></span><br><span class="line"></span><br><span class="line">  methods: &#123;</span><br><span class="line">    saave() &#123;</span><br><span class="line">      date: <span class="keyword">this</span>.date,</span><br><span class="line">      totalTime: <span class="keyword">this</span>.totalTime,</span><br><span class="line">      comment: <span class="keyword">this</span>.comment</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">this</span>.$store.dispatch(<span class="string">'savePlan'</span>, Plan)</span><br><span class="line">    <span class="keyword">this</span>.$store.dispatch(<span class="string">'addTotalTime'</span>, totalTime)</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">action 内部执行异步操作：</span><br><span class="line"></span><br><span class="line">  actions: &#123;</span><br><span class="line">    incrementAsync (&#123; commit &#125;) &#123;</span><br><span class="line">      setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        commit(<span class="string">'increment'</span>)</span><br><span class="line">      &#125;, <span class="number">1000</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// this.$store.dispatch 可以处理被触发的 action 的处理函数返回的 Promise，并且 this.$store.dispatch 仍旧返回 Promise。</span></span><br><span class="line">  actions: &#123;</span><br><span class="line">    actionA (&#123; commit &#125;) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">          commit(<span class="string">'someMutation'</span>)</span><br><span class="line">          resolve()</span><br><span class="line">        &#125;, <span class="number">1000</span>)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  $<span class="keyword">this</span>.store.dispatch(<span class="string">'actionA'</span>).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  actions: &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  actionB (&#123; dispatch, commit &#125;) &#123;</span><br><span class="line">    <span class="keyword">return</span> dispatch(<span class="string">'actionA'</span>).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      commit(<span class="string">'someOtherMutation'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">最后，如果我们利用 <span class="keyword">async</span> / <span class="keyword">await</span> 这个 JavaScript 即将到来的新特性，我们可以像这样组合 action：</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 假设 getData() 和 getOtherData() 返回的是 Promise</span></span><br><span class="line"></span><br><span class="line">  actions: &#123;</span><br><span class="line">    <span class="keyword">async</span> actionA (&#123; commit &#125;) &#123;</span><br><span class="line">      commit(<span class="string">'gotData'</span>, <span class="keyword">await</span> getData())</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">async</span> actionB (&#123; dispatch, commit &#125;) &#123;</span><br><span class="line">      <span class="keyword">await</span> dispatch(<span class="string">'actionA'</span>) <span class="comment">// 等待 actionA 完成</span></span><br><span class="line">      commit(<span class="string">'gotOtherData'</span>, <span class="keyword">await</span> getOtherData())</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  这实际上就实现了action嵌套另一个action的情况。</span><br><span class="line"></span><br><span class="line">  讲了这么多action，你可能会纳闷一个问题：action这鬼东西不是和mutation看起来好多地方都很像吗，直接触发mutation去改变state岂不更好？为什么还要先触发action，再由action去触发mutation才达到改变state的目的？</span><br><span class="line"></span><br><span class="line">  这是个好问题。还记得上面我们提到过mutation只能是同步的操作而action可以是包含异步操作吗？那么，若想进行异步操作，通过mutation显然是无法完成的，所以就有了action。我们来看一个更加实际的购物车示例，涉及到调用异步 API 和分发多重 mutation：</span><br><span class="line"></span><br><span class="line">  actions: &#123;</span><br><span class="line">    checkout (&#123; commit, state &#125;, products) &#123;</span><br><span class="line">      <span class="comment">// 把当前购物车的物品备份起来</span></span><br><span class="line">      <span class="keyword">const</span> savedCartItems = [...state.cart.added]</span><br><span class="line">      <span class="comment">// 发出结账请求，然后乐观地清空购物车</span></span><br><span class="line">      commit(types.CHECKOUT_REQUEST)</span><br><span class="line">      <span class="comment">// 购物 API 接受一个成功回调和一个失败回调</span></span><br><span class="line">      shop.buyProducts(</span><br><span class="line">        products,</span><br><span class="line">        <span class="comment">// 成功操作</span></span><br><span class="line">        () =&gt; commit(types.CHECKOUT_SUCCESS),</span><br><span class="line">        <span class="comment">// 失败操作</span></span><br><span class="line">        () =&gt; commit(types.CHECKOUT_FAILURE, savedCartItems)</span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3、vue-store存储commit和dispatch"><a href="#3、vue-store存储commit和dispatch" class="headerlink" title="3、vue store存储commit和dispatch"></a>3、vue store存储commit和dispatch</h4><p>  this.$store.commit(‘toShowLoginDialog’, true);<br>  this.$store.dispatch(‘toShowLoginDialog’,false)<br>  主要区别是：<br>  dispatch：含有异步操作，例如向后台提交数据，写法： this.$store.dispatch(‘mutations方法名’,值)<br>  commit：同步操作，写法：this.$store.commit(‘mutations方法名’,值)</p>
+
+        </div>
+      </article>
+    </div>
+    <!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+    <!-- Pre or Next -->
+    <div class="nav-links">
+      
+      
+        <div class="nav-next">
+          <a href="/2018/09/26/Promise/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
+      
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer-widgets -->
+<div class="footer-widgets">
+  <div class="row inside-wrapper">
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">关于本站</h1>
+        <div class="custom-widget-content">
+          
+          分享生活中的灵感与创意，鼓励阅读，不读书则愚。
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Contact</h1>
+        <div class="widget-text">
+          
+            
+              <a href="https://github.com/BBT-FE/blog" class="icon icon-github" target="_blank">github</a>
+            
+          
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Search</h1>
+        <div class="widget-text">
+          <form onSubmit="return appDaily.bindToggleButton('')">
+            <p>
+              <input type="text" placeholder="search..." id="homeSearchInput">
+            </p>
+            <!-- <input type="submit" value="GO"> -->
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>BBT &copy; 2019</span>
+    
+      <span class="split">|</span>
+      <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with Theme <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank">Daily</a></span>
+    
+  </p>
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+
+
+</body>
+
+</html>
