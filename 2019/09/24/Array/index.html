@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="zhou zhou">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="Array"/>
+  
+  <!--Open Graph Description-->
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="BBT"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>Array - BBT</title>
+
+
+  <link rel="shortcut icon" href="https://avatars0.githubusercontent.com/u/31090575?s=200&v=4">
+
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!----------------------------
+  https://github.com/GallenHu/hexo-theme-Daily
+
+ _____            _   _
+|  __ \          (_) | |
+| |  | |   __ _   _  | |  _   _
+| |  | |  / _` | | | | | | | | |
+| |__| | | (_| | | | | | | |_| |
+|_____/   \__,_| |_| |_|  \__, |
+                          __/ |
+                         |___/
+
+    --------------------------->
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="https://avatars0.githubusercontent.com/u/31090575?s=200&v=4" alt="BBT" height="60">
+        
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/view">
+                
+                  view
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  archive
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  about
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            Array
+            
+          </h1>
+          <p class="posted-on">
+          2019-09-24
+          </p>
+          <div class="tags-links">
+            
+              
+                <a href="/tags/出云/" rel="tag">
+                  出云
+                </a>
+              
+            
+          </div>
+        </div>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <!-- 引言（简介） -->
+<ol>
+<li>数组介绍</li>
+<li>数组常用方法</li>
+<li>数组排序</li>
+<li>数组去重、对象数组去重<a id="more"></a>
+</li>
+</ol>
+<!-- 详细内容 -->
+<h5 id="1-什么是数组"><a href="#1-什么是数组" class="headerlink" title="1. 什么是数组"></a>1. 什么是数组</h5><p>  在程序设计中，为了处理方便，把具有相同类型的若干变量按有序的形式组织起来。这些按序排列的同类数据元素的集合称为数组。</p>
+<ul>
+<li>数组构成：由一个或多个数组元素组成的，各元素之间使用逗号”,”分割。</li>
+<li>数组元素：每个数组元素由”索引下标”和”值”构成。</li>
+<li>根据维数划分为一维数组、二维数组、三维数组等多维数组。</li>
+<li><p>数组是一种特殊的变量，它能够一次存放一个以上的值。并且还可以通过引用索引号来访问这些值。</p>
+<p>在js中，存在一种情况，伪数组，又称类数组。是一个类似数组的对象，但是有如下几个特征。</p>
+<ul>
+<li><p>按索引方式储存数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>: xxx, <span class="number">1</span>: xxx, <span class="number">2</span>: xxx...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>具有length属性但是length属性不是动态的，不会随着成员的变化而改变</p>
+</li>
+<li>不具有数组的push()， forEach()等方法</li>
+</ul>
+<p>常见的典型伪数组，包括jQuery中通过 $() 获取的DOM元素集, 函数中的的 arguments 对象， 以及字符串String对象。</p>
+<p>如何判断数据是不是数组：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fakeArray <span class="keyword">instanceof</span> <span class="built_in">Array</span> === <span class="literal">false</span>;</span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(fakeArray) === <span class="string">"[object Object]"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">6</span>];</span><br><span class="line">arr <span class="keyword">instanceof</span> <span class="built_in">Array</span> === <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(arr) === <span class="string">"[object Array]"</span></span><br><span class="line"><span class="built_in">Array</span>.isArray()</span><br></pre></td></tr></table></figure>
+<p>伪数组转化成真数组的方法:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arrLike.length; i++)&#123;</span><br><span class="line">    arr.push(arrLike[i]);</span><br><span class="line">&#125;</span><br><span class="line">或者： <span class="comment">// 使用slice()返回一个新的数组,用call()或apply()把他的作用环境指向伪数组。</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.slice.call(arrLike)</span><br><span class="line">或者：</span><br><span class="line"><span class="built_in">Array</span>.prototype.slice.apply(arrLike)</span><br><span class="line">修改原型指向</span><br><span class="line">arrLike.__proto__ = <span class="built_in">Array</span>.prototype;</span><br><span class="line"><span class="comment">// 这样arrLike就继承了Array.prototype中的方法，可以使用push()，unshift()等方法了，length值也会随之动态改变。 另外这种直接修改原型链的方法，还会保留下伪数组中的所有属性，包括不是索引值的属性。</span></span><br><span class="line"></span><br><span class="line">ES2015中的<span class="built_in">Array</span>.from()方法</span><br><span class="line"><span class="comment">// Array.from() 方法从一个类似数组或可迭代对象中创建一个新的数组实例。</span></span><br><span class="line"><span class="keyword">var</span> arr = <span class="built_in">Array</span>.from(arrLike);</span><br></pre></td></tr></table></figure>
+<p><b>总结</b></p>
+<p>对象没有数组Array.prototype的属性值，类型是Object，而数组类型是Array；</p>
+<p>数组是基于索引的实现，length会自动更新，而对象是键值对；</p>
+</li>
+</ul>
+<h4 id="2-数组属性和方法"><a href="#2-数组属性和方法" class="headerlink" title="2.数组属性和方法"></a>2.数组属性和方法</h4><p>属性：</p>
+<ol>
+<li><p>constructor：<br>书面说法：<br>返回对创建此对象的数组函数的引用。</p>
+<p>解释：<br>当创建一个数组时，JavaScript 会 new 一个Array构造函数，从而返回一个实例，实例中包含<strong>proto</strong>属性，在<strong>proto</strong>属性下面会包含constructor属性，此属性的值指向Array构造函数。因此，每一个对象的实例都可以通过constructor访问它的构造函数。</p>
+<p>示例：<br>var a = [1,2,3];<br>a.constructor === Array</p>
+</li>
+<li><p>length:  数组长度</p>
+</li>
+<li><p>prototype：<br><strong>书面说法：</strong>对象的原型，使您有能力向对象添加属性和方法。</p>
+<p>解释：<br>因为Js中每个数据类型都是对象（null和undefined除外）而每个对象都继承自另一个对象，后者称之为原型对象，当构建一个对象实例时，原型上的所有方法都会被继承。</p>
+<p>示例：Array.prototype.name == “给数组对象添加个名称属性”<br>方法：</p>
+</li>
+</ol>
+<ul>
+<li><p>concat()<br>书面说法：<br>连接两个或多个数组，返回连接好的新数组。</p>
+<p>参数：<br>必需-该参数可以是具体的值，也可以是数组对象。可以是任意多个。</p>
+<p>示例：<br>var a = [1, 2, 3]<br>a.concat([4, 5]) // log [1, 2, 3, 4, 5]</p>
+</li>
+</ul>
+
+        </div>
+      </article>
+    </div>
+    <!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+    <!-- Pre or Next -->
+    <div class="nav-links">
+      
+      
+        <div class="nav-next">
+          <a href="/2019/09/11/websocket/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
+      
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer-widgets -->
+<div class="footer-widgets">
+  <div class="row inside-wrapper">
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">关于本站</h1>
+        <div class="custom-widget-content">
+          
+          分享生活中的灵感与创意，鼓励阅读，不读书则愚。
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Contact</h1>
+        <div class="widget-text">
+          
+            
+              <a href="https://github.com/BBT-FE/blog" class="icon icon-github" target="_blank">github</a>
+            
+          
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Search</h1>
+        <div class="widget-text">
+          <form onSubmit="return appDaily.bindToggleButton('')">
+            <p>
+              <input type="text" placeholder="search..." id="homeSearchInput">
+            </p>
+            <!-- <input type="submit" value="GO"> -->
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>BBT &copy; 2019</span>
+    
+      <span class="split">|</span>
+      <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with Theme <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank">Daily</a></span>
+    
+  </p>
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+
+
+</body>
+
+</html>
