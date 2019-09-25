@@ -199,6 +199,65 @@
 <p>参数：<br>必需-该参数可以是具体的值，也可以是数组对象。可以是任意多个。</p>
 <p>示例：<br>var a = [1, 2, 3]<br>a.concat([4, 5]) // log [1, 2, 3, 4, 5]</p>
 </li>
+<li><p>join()<br>书面说法：<br>把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔。</p>
+<p>参数：<br>separator(分隔符)：可选-分隔符，当省略时，默认使用逗号分隔。</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; a.join(<span class="string">","</span>) <span class="comment">// log "1, 2, 3"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>pop()<br>书面说法：<br>删除并返回数组的最后一个元素</p>
+<p>参数：<br>无</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; a.pop() <span class="comment">// log "3"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>push()<br>书面说法：<br>向数组的末尾添加一个或更多元素，并返回新的长度。</li>
+</ul>
+<p>参数：<br>可以使对象，可以使字符串，该方法会直接修改原数组，返回修改后的数组长度。</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">var</span> info = &#123; <span class="attr">name</span>: <span class="string">'zxiyan'</span> &#125; : <span class="keyword">var</span> info = <span class="string">'xiyan'</span></span><br><span class="line">a.push(info)</span><br><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">// [1,2,3,&#123;'xiyan'&#125;] : [1,2,3,'xiyan']</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>shift()<br>书面说法：<br>删除并返回数组的第一个元素</li>
+</ul>
+<p>参数：<br>无</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">a.shift() <span class="comment">// log "1"</span></span><br><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">// [2, 3]</span></span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">- unshift()</span></span><br><span class="line"><span class="string">书面说法：</span></span><br><span class="line"><span class="string">向数组的开头添加一个或更多元素，并返回新的长度</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">参数：</span></span><br><span class="line"><span class="string">可以使对象，可以使字符串，该方法会直接修改原数组，返回修改后的数组长度。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">示例：</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>js</span><br><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">var</span> info = &#123; <span class="attr">name</span>: <span class="string">'zxiyan'</span> &#125; : <span class="keyword">var</span> info = <span class="string">'xiyan'</span></span><br><span class="line">a.unshift(info)</span><br><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">// [&#123;&#125;, 1,2,3]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>slice()<br>书面说法：<br>从某个已有的数组返回选定的元素</p>
+<p>参数：<br>start：必需-要选取的开始位置的下标（当为负数时，则从数组末尾开始算，-1则为最后一个，-2为倒数第二个，依此类推）<br>end：可选-要选取的结束位置的下标（当为负数时，同上。当没有指定时，默认下标为最后一个元素。）</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; </span><br><span class="line">a.slice(<span class="number">0</span>,<span class="number">2</span>) <span class="comment">// log [1, 2] </span></span><br><span class="line">a.slice(<span class="number">0</span>,<span class="number">-1</span>) <span class="comment">// log [1, 2] </span></span><br><span class="line">a.slice(<span class="number">-3</span>,<span class="number">-1</span>) <span class="comment">// log [1, 2]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>splice(index, howmany, item-n)<br>书面说法：<br>删除元素，并向数组添加新元素。</p>
+<p>参数：<br>index：必需-整数，规定添加/删除的位置，如为负数则从结尾处开始计算。<br>howmany：必需-要删除的元素数量，如为0，则不删除元素。<br>item-n：可选-向数组中添加的新元素。当 howmany 为0时，新元素就增加至 index 处前面，否则将替换从 index 到 howmany 个元素的位置。</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> months = [<span class="string">'Jan'</span>, <span class="string">'March'</span>, <span class="string">'April'</span>, <span class="string">'June'</span>];</span><br><span class="line">months.splice(<span class="number">1</span>, <span class="number">0</span>, <span class="string">'Feb'</span>); <span class="comment">// Array ['Jan', 'Feb', 'March', 'April', 'June']</span></span><br><span class="line">months.splice(<span class="number">2</span>, <span class="number">1</span>); <span class="comment">// Array ["Jan", "March", "June"]</span></span><br><span class="line">months.splice(<span class="number">1</span>); <span class="comment">// Array ["Jan"]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>reverse()<br>书面说法：<br>方法将数组中元素的位置颠倒，并返回该数组。该方法会改变原数组。</p>
+<p>参数：<br>无</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>];</span><br><span class="line">array.reverse()</span><br><span class="line"><span class="built_in">console</span>.log(array);<span class="comment">//  Array ["three", "two", "one"]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>sort()<br>书面说法：<br>方法用原地算法对数组的元素进行排序，并返回数组。默认排序顺序是在将元素转换为字符串，然后比较它们的UTF-16代码单元值序列时构建的<br>由于它取决于具体实现，因此无法保证排序的时间和空间复杂性</p>
+<p>参数：<br>无</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> months = [<span class="string">'March'</span>, <span class="string">'Jan'</span>, <span class="string">'Feb'</span>, <span class="string">'Dec'</span>];</span><br><span class="line">months.sort();</span><br><span class="line"><span class="built_in">console</span>.log(months);</span><br><span class="line"><span class="comment">// expected output: Array ["Dec", "Feb", "Jan", "March"]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> array1 = [<span class="number">1</span>, <span class="number">30</span>, <span class="number">4</span>, <span class="number">21</span>, <span class="number">100000</span>];</span><br><span class="line">array1.sort();</span><br><span class="line"><span class="built_in">console</span>.log(array1);</span><br><span class="line"><span class="comment">// expected output: Array [1, 100000, 21, 30, 4]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>toSource()<br>书面说法：<br>返回一个字符串,代表该数组的源代码.<br>非标准<br>该特性是非标准的，请尽量不要在生产环境中使用它！</p>
+<p>参数：<br>无</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> alpha = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>);</span><br><span class="line">alpha.toSource();   <span class="comment">//返回["a", "b", "c"]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>toString()<br>书面说法<br>把数组转换为字符串，并返回结果。</p>
+<p>参数：<br>无</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="string">'a'</span>, <span class="string">'1a'</span>];</span><br><span class="line"><span class="built_in">console</span>.log(array1.toString());</span><br><span class="line"><span class="comment">// expected output: "1,2,a,1a"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>toLocaleString()    // 这个有点搞不懂，待理解<br>书面说法：<br>把数组转换为本地数组，并返回结果。<br>参数：<br>无</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>valueOf()<br>书面说法：<br>方法返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1。<br>首个被找到的元素在数组中的索引位置; 若没有找到则返回 -1<br>参数：<br>需要查找的元素，或者 全部</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">2</span>, <span class="number">5</span>, <span class="number">9</span>];</span><br><span class="line">array.indexOf(<span class="number">2</span>);     <span class="comment">// 0</span></span><br><span class="line">array.indexOf(<span class="number">7</span>);     <span class="comment">// -1</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 
         </div>
