@@ -38,15 +38,25 @@ title: View
 17. <a href="https://bbt-fe.github.io/blog/view/217.html">多重继承</a>
 18. <a href="https://bbt-fe.github.io/blog/view/218.html">javascript对象的几种创建方式</a>
 19. <a href="https://bbt-fe.github.io/blog/view/219.html">异步解决方案的发展历程以及优缺点</a>
-<!-- 20. <a href="https://bbt-fe.github.io/blog/view/220.html">多重继承</a>
-21. <a href="https://bbt-fe.github.io/blog/view/221.html">多重继承</a>
-22. <a href="https://bbt-fe.github.io/blog/view/222.html">多重继承</a> -->
+
 
 
 
 
 #### js面向对象
+
+ <a href="https://bbt-fe.github.io/blog/view/301.html">js面向对象</a>
+
 #### VUE
+1. <a href="https://bbt-fe.github.io/blog/view/401.html">什么是MVVM？</a>
+2. <a href="https://bbt-fe.github.io/blog/view/402.html">vue的优点是什么,双向绑定原理</a>
+3. <a href="https://bbt-fe.github.io/blog/view/403.html">组件之间的传值</a>
+4. <a href="https://bbt-fe.github.io/blog/view/404.html">vuex是什么？怎么使用？哪种功能场景使用它？ HTML 和 HTML5？</a>
+5. <a href="https://bbt-fe.github.io/blog/view/405.html">vue-router有哪几种导航钩子</a>
+6. <a href="https://bbt-fe.github.io/blog/view/406.html">生命周期相关面试题</a>
+7. <a href="https://bbt-fe.github.io/blog/view/407.html">写 React / Vue 项目时为什么要在列表组件中写 key，其作用是什么？</a>
+8. <a href="https://bbt-fe.github.io/blog/view/408.html">react-router 里的 <Link> 标签和 <a> 标签有什么区别</a>
+
 #### Webpack
 #### http
 #### git
