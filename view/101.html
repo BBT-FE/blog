@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="zhou zhou">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="垂直水平居中的实现方式。"/>
+  
+  <!--Open Graph Description-->
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="BBT"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>垂直水平居中的实现方式。 - 出云 - BBT</title>
+
+
+  <link rel="shortcut icon" href="https://avatars0.githubusercontent.com/u/31090575?s=200&v=4">
+
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!----------------------------
+  https://github.com/GallenHu/hexo-theme-Daily
+
+ _____            _   _
+|  __ \          (_) | |
+| |  | |   __ _   _  | |  _   _
+| |  | |  / _` | | | | | | | | |
+| |__| | | (_| | | | | | | |_| |
+|_____/   \__,_| |_| |_|  \__, |
+                          __/ |
+                         |___/
+
+    --------------------------->
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="https://avatars0.githubusercontent.com/u/31090575?s=200&v=4" alt="BBT" height="60">
+        
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/view">
+                
+                  view
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  archive
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  about
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            垂直水平居中的实现方式。
+            
+          </h1>
+          <p class="posted-on">
+          2019-10-18
+          </p>
+          <div class="tags-links">
+            
+          </div>
+        </div>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <!-- 引言（简介） -->
+<p>这个是云忆小姐姐多年前总结的，我负责搬运了一下<br><a id="more"></a></p>
+<!-- 详细内容 -->
+<p>十一种实现方式如下： </p>
+<!--more-->
+<p>1、使用绝对定位和负边距对块元素进行垂直定位</p>
+<p>html代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;box&quot;&gt;</span><br><span class="line">  &lt;div id=&quot;child&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>css代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#box &#123;</span><br><span class="line">  width: 300px;</span><br><span class="line">  heigth: 300px;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#child &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  top: 50%;</span><br><span class="line">  margin-top: -50px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2、使用绝对定位和transform</p>
+<p>html 代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;child&quot;&gt;</span><br><span class="line">  我的家在东北松花江是=上</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>css 代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#box &#123;</span><br><span class="line">  width: 300px;</span><br><span class="line">  heigth: 300px;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line">#child &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 50%;</span><br><span class="line">  transform: translate(0, -50%); //相对自身而言，y 轴上移50%</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此种方式的一个明显好处就是不用知道自身元素的高度，因为 transform 中translate 偏移的百分比就是相对自身元素的尺寸而言的</p>
+<p>3、绝对定位和负边距</p>
+<p>html 代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;box&quot;&gt;</span><br><span class="line">    &lt;div id=&quot;child&quot;&gt;我也是个测试DIV&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>css 代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#box &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background: #ddd;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line">#child &#123;</span><br><span class="line">　　width: 50%;</span><br><span class="line">    height: 30%;</span><br><span class="line">    background: pink;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 50%;</span><br><span class="line">    margin: -15% 0 0 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4、绝对定位结合 margin: auto;</p>
+<p>html代码如上</p>
+<p>css代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#box &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background: #ddd;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line">#child &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background: #A1CCFE;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    bottom: 0;</span><br><span class="line">    margin: auto;</span><br><span class="line">    line-height: 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这种实现方式的两个核心是：把要垂直居中的元素相对于父元素绝对定位，top和bottom设为相等的值，我这里设成了0，当然你也可以设为99999px或者-99999px无论什么，只要两者相等就行，这一步做完之后再将要居中元素的margin设为auto，这样便可以实现垂直居中了。<br>　　被居中元素的宽高也可以不设置，但不设置的话就必须是图片这种自身就包含尺寸的元素，否则无法实现。</p>
+<p>5、使用 padding 实现子元素的垂直居中</p>
+<p>6、设置第三方基准</p>
+<p>html 代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;box&quot;&gt;</span><br><span class="line">    &lt;div id=&quot;base&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div id=&quot;child&quot;&gt;今天写了第一篇博客，希望可以坚持写下去！&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>css 代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#box &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background: #ddd;</span><br><span class="line">&#125;</span><br><span class="line">#base &#123;</span><br><span class="line">    height: 50%;</span><br><span class="line">    background: #AF9BD3;</span><br><span class="line">&#125;</span><br><span class="line">#child &#123;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background: rgba(131, 224, 245, 0.6);</span><br><span class="line">    line-height: 50px;</span><br><span class="line">    margin-top: -50px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>先设置一个高度等于父元素50%的第三方基准，然后再给要居中的元素一个 margin-top ，大小为自身的一半</p>
+<p>7、flex 布局</p>
+<p>html 代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;box&quot;&gt;雾霾天气，太久没有打球了&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>css代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#box &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background: #ddd;</span><br><span class="line">    display: flex;</span><br><span class="line">    align-items: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>元素可以通过设置display:flex;将其指定为flex布局的容器，指定好了容器之后再为其添加align-items属性，该属性定义项目在交叉轴（这里是纵向轴）上的对齐方式，可能的取值有五个，分别如下：<br>　　flex-start:：交叉轴的起点对齐；<br>　　flex-end：交叉轴的终点对齐；<br>　　center：交叉轴的中点对齐；<br>　　baseline：项目第一行文字的基线对齐；<br>　　stretch（该值是默认值）：如果项目没有设置高度或者设为了auto，那么将占满整个容器的高度。</p>
+<p>8、弹性布局方式二</p>
+<p>html 代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;box&quot;&gt;</span><br><span class="line">    &lt;div id=&quot;child&quot;&gt;</span><br><span class="line">        答案当然是多用绿色的背景哈哈</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>css 代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#box &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background: #ddd;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-direction: column;</span><br><span class="line">    justify-content: center;</span><br><span class="line">&#125;</span><br><span class="line">#child &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background: #08BC67;</span><br><span class="line">    line-height: 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这种方式也是首先给父元素设置display:flex，设置好之后改变主轴的方向flex-direction: column，该属性可能的取值有四个，分别如下：<br>　　row（该值为默认值）：主轴为水平方向，起点在左端；<br>　　row-reverse：主轴为水平方向，起点在右端；<br>　　column：主轴为垂直方向，起点在上沿；<br>　　column-reverse：主轴为垂直方向，起点在下沿。<br>　　<br>　　justify-content属性定义了项目在主轴上的对齐方式，可能的取值有五个，分别如下（不过具体的对齐方式与主轴的方向有关，以下的值都是假设主轴为从左到右的）：<br>　　flex-start（该值是默认值）：左对齐；<br>　　flex-end：右对齐；<br>　　center：居中对齐；<br>　　space-between：两端对齐，各个项目之间的间隔均相等；<br>　　space-around：各个项目两侧的间隔相等。</p>
+<p>9、line-heigth 对齐</p>
+<p>10、使用 line-height 和 vertical-align 对图片进行垂直居中</p>
+<p>html 代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;box&quot;&gt;</span><br><span class="line">    &lt;img src=&quot;duncan.jpeg&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>css 代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#box&#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background: #ddd;</span><br><span class="line">    line-height: 300px;</span><br><span class="line">&#125;</span><br><span class="line">#box img &#123;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>11、使用 display 和 vertical-align 对容器里的文字进行垂直居中</p>
+<p>html 代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;box&quot;&gt;</span><br><span class="line">    &lt;div id=&quot;child&quot;&gt;我也是一段测试文本&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>css 代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#box &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background: #ddd;</span><br><span class="line">    display: table;</span><br><span class="line">&#125;</span><br><span class="line">#child &#123;</span><br><span class="line">    display: table-cell;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里关于vertical-align啰嗦两句：vertical-align属性只对拥有valign特性的html元素起作用，例如表格元素中的<td><th>等等，而像<div><span>这样的元素是不行的。</span></div></th></td></p>
+<p>　　valign属性规定单元格中内容的垂直排列方式，语法：<td valign="value">，value的可能取值有四种：</td></p>
+<p>　　top：对内容进行上对齐<br>　　middle：对内容进行居中对齐<br>　　bottom：对内容进行下对齐<br>　　baseline：基线对齐</p>
+
+        </div>
+      </article>
+    </div>
+    <!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+    <!-- Pre or Next -->
+    <div class="nav-links">
+      
+      
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer-widgets -->
+<div class="footer-widgets">
+  <div class="row inside-wrapper">
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">关于本站</h1>
+        <div class="custom-widget-content">
+          
+          分享生活中的灵感与创意，鼓励阅读，不读书则愚。
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Contact</h1>
+        <div class="widget-text">
+          
+            
+              <a href="https://github.com/BBT-FE/blog" class="icon icon-github" target="_blank">github</a>
+            
+          
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Search</h1>
+        <div class="widget-text">
+          <form onSubmit="return appDaily.bindToggleButton('')">
+            <p>
+              <input type="text" placeholder="search..." id="homeSearchInput">
+            </p>
+            <!-- <input type="submit" value="GO"> -->
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>BBT &copy; 2019</span>
+    
+      <span class="split">|</span>
+      <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with Theme <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank">Daily</a></span>
+    
+  </p>
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+
+
+</body>
+
+</html>

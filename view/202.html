@@ -16,7 +16,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="说说你对语义化的理解？"/>
+      <meta property="og:title" content="常用的浏览器内核"/>
   
   <!--Open Graph Description-->
   
@@ -33,7 +33,7 @@
 
   <!-- Title -->
   
-  <title>说说你对语义化的理解？ - 出云 - BBT</title>
+  <title>常用的浏览器内核 - 出云 - BBT</title>
 
 
   <link rel="shortcut icon" href="https://avatars0.githubusercontent.com/u/31090575?s=200&v=4">
@@ -129,7 +129,7 @@
         <!-- Title date & tags -->
         <div class="post-header">
           <h1 class="entry-title">
-            说说你对语义化的理解？
+            常用的浏览器内核
             
           </h1>
           <p class="posted-on">
@@ -142,15 +142,41 @@
         <!-- Post Main Content -->
         <div class="entry-content">
           <!-- 引言（简介） -->
-<p>  作为了解，一般笔试题会有<br><a id="more"></a></p>
+<a id="more"></a>
 <!-- 详细内容 -->
-<p>简单的来说可分为： </p>
+<h4 id="1-数组常用："><a href="#1-数组常用：" class="headerlink" title="1. 数组常用："></a>1. 数组常用：</h4><ul>
+<li><p>push()数组的最后面添加一个值并返回添加的值。</p>
+</li>
+<li><p>shift(); 这个方法会删除数组的第一项并返回删除掉的值。比如：console.log(abc.shift());//1; console.log(abc); //[2,3,4,5,6,7,8,9];</p>
+</li>
+<li><p>unshift(); 这个方法会在数组的第一项前添加一个值并返回数组的长度。</p>
+</li>
+<li><p>sort(); 数组排序，不过是按照字符串的方式来排序。如果想要数字按大小顺序排序的话，还要写一个排序函数  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">　<span class="function"><span class="keyword">function</span> <span class="title">sortNumber</span>(<span class="params">a,b</span>)</span>&#123; </span><br><span class="line">  <span class="keyword">return</span> a-b; </span><br><span class="line">&#125; </span><br><span class="line">　<span class="keyword">var</span> abb = [<span class="number">78</span>,<span class="number">7</span>,<span class="number">14</span>,<span class="number">10</span>,<span class="number">15</span>]; </span><br><span class="line">abb.sort(); </span><br><span class="line"><span class="built_in">console</span>.log(abb); <span class="comment">//[7,10,14,15,78];</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <ul>
-<li>1，去掉或者丢失样式的时候能够让页面呈现出清晰的结构</li>
-<li>2，有利于SEO：和搜索引擎建立良好沟通，有助于爬虫抓取更多的有效信息：爬虫依赖于标签来确定上下文和各个关键字的权重；</li>
-<li>3，方便其他设备解析（如屏幕阅读器、盲人阅读器、移动设备）以意义的方式来渲染网页；</li>
-<li>4，便于团队开发和维护，语义化更具可读性，是下一步吧网页的重要动向，遵循W3C标准的团队都遵循这个标准，可以减少差异化。</li>
-<li>5.通常语义化HTML会使代码变的更少，使页面加载更快。</li>
+<li><p>concat(); 该方法可以基与当前数组中的所有项创建一个新数组。</p>
+</li>
+<li><p>slice();该方法可以理解为截取数组，接受2个参数,只填一个参数代表从该位置截取到最后，填两个参数代表要截取的头和尾的位置，但是取头不取尾。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> colors = [“red”, “blue”, “yellow”, “black”, “orange”];</span><br><span class="line">　colors.slice(<span class="number">1</span>);<span class="comment">//[“blue”, “yellow”, “black”, “orange”];</span></span><br><span class="line">colors.slice(<span class="number">1</span>,<span class="number">3</span>);<span class="comment">//[“blue”, “yellow”];保留索引值为1的元素（blue）,索引值为3的元素则不保留</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>splice()始终返回一个数组，该数组从原始数组中删除的项，没有的话就返回空数组<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">　删除：可以删除任意数量的项，只需要指定<span class="number">2</span>个参数。 </span><br><span class="line">　　colors.splice(<span class="number">1</span>,<span class="number">3</span>);<span class="comment">//[“red”,”orange”] 从索引值1开始删除3项元素。</span></span><br><span class="line">　插入：可以向指定的位置插入任意数量的项。 </span><br><span class="line">　　splice(<span class="number">2</span>,<span class="number">0</span>,”插入项<span class="number">1</span>”,”插入项<span class="number">2</span>”);<span class="comment">//[“red”, “blue”,”插入项1”,”插入项2”,”yellow”, “black”, “orange”]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>join();将数组转化为字符串，括号内标识连接的方式。</li>
+</ul>
+<h4 id="2-字符串"><a href="#2-字符串" class="headerlink" title="2. 字符串"></a>2. 字符串</h4><p>  例： var hw=”helloworld”；</p>
+<ul>
+<li><p>slice()、substring();截取字符串，接受2个参数，只填一个参数代表从该位置截取到最后，填两个参数代表要截取的头和尾  例如： console.log(hw.slice(4,7));//owo</p>
+</li>
+<li><p>substr();截取字符串，接受2个参数，只填一个参数代表从该位置截取到最后，填两个参数代表要截取的开始位置和长度！ </p>
+</li>
+<li><p>spilt();切割字符串并放在一个数组中，括号内表示切割的标识 </p>
+</li>
 </ul>
 
         </div>

@@ -16,7 +16,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="View"/>
+      <meta property="og:title" content="什么是严格模式？使用它有哪些优点/缺点？ (作为了解)"/>
   
   <!--Open Graph Description-->
   
@@ -33,7 +33,7 @@
 
   <!-- Title -->
   
-  <title>View - BBT</title>
+  <title>什么是严格模式？使用它有哪些优点/缺点？ (作为了解) - 出云 - BBT</title>
 
 
   <link rel="shortcut icon" href="https://avatars0.githubusercontent.com/u/31090575?s=200&v=4">
@@ -129,7 +129,7 @@
         <!-- Title date & tags -->
         <div class="post-header">
           <h1 class="entry-title">
-            View
+            什么是严格模式？使用它有哪些优点/缺点？ (作为了解)
             
           </h1>
           <p class="posted-on">
@@ -141,43 +141,19 @@
         </div>
         <!-- Post Main Content -->
         <div class="entry-content">
-          <p>随时准备，努力！</p>
-<h3 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h3><h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><ol>
-<li><a href="https://bbt-fe.github.io/blog/view/1.html">说说你对语义化的理解？</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/2.html">Doctype作用? 严格模式与混杂模式如何区分？它们有何意义?</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/3.html">什么是严格模式？使用它有哪些优点/缺点？ (作为了解)</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/4.html">html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/5.html">如何实现浏览器内多个标签页之间的通信?(localstorge、cookies区别等)</a></li>
+          <!-- 引言（简介） -->
+<p>  作为了解，一般笔试题会有<br><a id="more"></a></p>
+<!-- 详细内容 -->
+<p>简单的来说可分为： </p>
+<ol>
+<li>混杂模式：又称怪异模式或兼容模式，是指浏览器用自己的方式解析代码。</li>
+<li><p>严格模式主要有以下限制：<br>变量必须声明后再使用<br>函数的参数不能有同名属性，否则报错<br>不能使用with语句<br>不能对只读属性赋值，否则报错<br>不能使用前缀0表示八进制数，否则报错<br>不能删除不可删除的属性，否则报错<br>不能删除变量delete prop，会报错，只能删除属性delete global[prop]<br>eval不会在它的外层作用域引入变量<br>eval和arguments不能被重新赋值<br>arguments不会自动反映函数参数的变化<br>不能使用arguments.callee<br>不能使用arguments.caller<br>禁止this指向全局对象<br>不能使用fn.caller和fn.arguments获取函数调用的堆栈<br>增加了保留字（比如protected、static和interface）</p>
+<ol start="3">
+<li>设立”严格模式”的目的，主要有以下几个：<br>§ 消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为;<br>§ 消除代码运行的一些不安全之处，保证代码运行的安全；<br>§ 提高编译器效率，增加运行速度；<br>§ 为未来新版本的Javascript做好铺垫。</li>
 </ol>
-<h4 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h4><ol>
-<li><a href="https://bbt-fe.github.io/blog/view/101.html">垂直水平居中的实现方式。</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/102.html">常用布局的实现（两列布局、三列适应布局，两列等高适应布局等）。</a></li>
+<p>注：经过测试IE6,7,8,9均不支持严格模式。如果说只存在严格模式，那么许多旧网站必然受到影响，如果只存在混杂模式，那么会回到当时浏览器大战时的混乱，每个浏览器都有自己的解析模式。</p>
+</li>
 </ol>
-<p>待定…..</p>
-<h4 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h4><ol>
-<li><a href="https://bbt-fe.github.io/blog/view/201.html">常用的浏览器内核。</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/202.html">String于Array常用方法。</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/203.html">DOM的默认事件、事件模型、事件委托、阻止默认事件、冒泡事件的方式等。</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/204.html">JS变量提升、匿名函数</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/205.html">原型继承。</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/206.html">作用域</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/207.html">闭包机制</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/208.html">Ajax的常用操作，JS跨域的实现原理。</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/209.html">解释如何this在JavaScript中工作。您能举例说明this在ES6中使用的方法之一吗？</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/210.html">Array.forEach()循环和Array.map()</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/211.html">JavaScript的同源策略。</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/212.html">什么是事件循环？调用堆栈和任务队列有什么区别？</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/213.html">什么是使用创建的变量之间的差异let，var还是const</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/214.html">ES6类和ES5函数构造函数之间有什么区别？</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/215.html">null和undefined的区别？</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/216.html">js延迟加载的方式有哪些？</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/217.html">多重继承</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/218.html">javascript对象的几种创建方式</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/219.html">异步解决方案的发展历程以及优缺点</a><br>&lt;!– 20. <a href="https://bbt-fe.github.io/blog/view/220.html">多重继承</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/221.html">多重继承</a></li>
-<li><a href="https://bbt-fe.github.io/blog/view/222.html">多重继承</a> –&gt;</li>
-</ol>
-<h4 id="js面向对象"><a href="#js面向对象" class="headerlink" title="js面向对象"></a>js面向对象</h4><h4 id="VUE"><a href="#VUE" class="headerlink" title="VUE"></a>VUE</h4><h4 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h4><h4 id="http"><a href="#http" class="headerlink" title="http"></a>http</h4><h4 id="git"><a href="#git" class="headerlink" title="git"></a>git</h4><h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p><a href="https://bbt-fe.github.io/blog/view/900.html">一个页面从输入 URL 到页面加载完的过程中都发生了什么事情？越详细越好</a></p>
 
         </div>
       </article>
