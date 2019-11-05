@@ -133,7 +133,7 @@
             
           </h1>
           <p class="posted-on">
-          2019-10-18
+          2019-11-05
           </p>
           <div class="tags-links">
             
@@ -142,7 +142,11 @@
         <!-- Post Main Content -->
         <div class="entry-content">
           <!-- 引言（简介） -->
-<p>  这个是属于 vue 必考题了， 这个比较重要，等我抽时间专门整理一下<br><a id="more"></a></p>
+<p>  我在加班整理试题，<br>  你在跟别人再打游戏。<br>  因为喜欢，对你纵容；<br>  因为在乎，不想让你太累。<br>  我太难了<br>  不知道，对你的感觉还能多久；<br>  哎！ 终将会失去。<br>  姑娘啊，珍重! </p>
+<ul>
+<li>愿你活成你想要的样子<a id="more"></a>
+</li>
+</ul>
 <!-- 详细内容 -->
 <h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
 <li><p>低耦合。视图（View）可以独立于Model变化和修改，一个ViewModel可以绑定到不同的”View”上，当View变化的时候Model可以不变，当Model变化的时候View也可以不变。</p>
@@ -152,7 +156,32 @@
 <li><p>独立开发。开发人员可以专注于业务逻辑和数据的开发（ViewModel），设计人员可以专注于页面设计。</p>
 </li>
 </ul>
-<h4 id="双向绑定原理"><a href="#双向绑定原理" class="headerlink" title="双向绑定原理"></a>双向绑定原理</h4>
+<h4 id="双向绑定原理"><a href="#双向绑定原理" class="headerlink" title="双向绑定原理"></a>双向绑定原理</h4><p>  vue数据双向绑定是通过<code>数据劫持结合发布者-订阅者模式</code>的方式来实现的。</p>
+<p>  实现数据的双向绑定</p>
+<p>  首先要对数据进行劫持监听，所以我们需要设置一个监听器Observer，用来监听所有属性。如果属性发上变化了，就需要告诉订阅者Watcher看是否需要更新。订阅者是有很多个，所以我们需要有一个消息订阅器Dep来专门收集这些订阅者，然后在监听器Observer和订阅者Watcher之间进行统一管理的。接着，我们还需要有一个指令解析器Compile，对每个节点元素进行扫描和解析，将相关指令（如v-model，v-on）对应初始化成一个订阅者Watcher，并替换模板数据或者绑定相应的函数，此时当订阅者Watcher接收到相应属性的变化，就会执行对应的更新函数，从而更新视图.大致分为以下三步</p>
+<ol>
+<li><p>实现一个监听器Observer，用来劫持并监听所有属性，如果有变动的，就通知订阅者。</p>
+<ul>
+<li>Observer： 是一个数据监听器，其实现核心方法就是Object.defineProperty()，Object.defineProperty来劫持对象属性的setter和getter操作（vm.data属性全部转成setter、getter方法。）并“种下”一个监听器，当数据发生变化的时候发出通知。</li>
+<li>利用set和get。。我们将要observe的对象，通过递归，将它所有的属性，包括子属性的属性，都给加上set和get，</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">observe</span>(<span class="params">data</span>)</span>&#123; </span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> data !== <span class="string">'object'</span>)&#123;<span class="comment">//不是对象不进行数据劫持</span></span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> Observe(data);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//将model-&gt;vm.data</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Observe</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> data)&#123;<span class="comment">//遍历所有属性进行劫持</span></span><br><span class="line">      <span class="keyword">let</span> val = data[key];</span><br><span class="line">      observe(val);<span class="comment">//深入递归数据劫持exp：data:&#123;a:&#123;a:3&#125;,b:5&#125;&#125;</span></span><br><span class="line">      <span class="built_in">Object</span>.defineProperty(data,key,&#123;</span><br><span class="line">        enumerable: <span class="literal">true</span>,</span><br><span class="line">        get()&#123;</span><br><span class="line">          <span class="keyword">return</span> val<span class="comment">//此时的val已经进行了数据劫持，exp：&#123;a:3&#125;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        set(newVal)&#123;</span><br><span class="line">          <span class="keyword">if</span>(newVal === val )&#123;<span class="comment">//值不变则返回</span></span><br><span class="line">              <span class="keyword">return</span></span><br><span class="line">          &#125;</span><br><span class="line">          val = newVal;</span><br><span class="line">          observe(newVal);<span class="comment">//新赋的值也必须进行数据劫持</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实现一个订阅者Watcher，每一个Watcher都绑定一个更新函数，watcher可以收到属性的变化通知并执行相应的函数，从而更新视图。</p>
+<ul>
+<li>Watcher就是一个订阅者。用于将Observer发来的update消息处理，执行Watcher绑定的更新函数。</li>
+<li>订阅者就调用自己的update方法（肯定会有一个updaata方法）</li>
+</ul>
+</li>
+<li><p>实现一个解析器Compile，可以扫描和解析每个节点的相关指令（v-model，v-on等指令），如果节点存在v-model，v-on等指令，则解析器Compile初始化这类节点的模板数据，使之可以显示在视图上，然后初始化相应的订阅者（Watcher）。</p>
+</li>
+</ol>
+<h4 id="实现一个MVVM"><a href="#实现一个MVVM" class="headerlink" title="实现一个MVVM"></a>实现一个MVVM</h4><ul>
+<li>a、Observer实现对MVVM自身model数据劫持，监听数据的属性变更，并在变动时进行notify</li>
+<li>b、Compile实现指令解析，初始化视图，并订阅数据变化，绑定好更新函数</li>
+<li>c、Watcher一方面接收Observer通过dep传递过来的数据变化，一方面通知Compile进行view update。</li>
+</ul>
+
         </div>
       </article>
     </div>
