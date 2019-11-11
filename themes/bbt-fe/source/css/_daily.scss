@@ -284,6 +284,7 @@ Content
 }
 .content-area {
   padding-top: $header-height;
+  // padding-top: 0;
 }
 .error404 .content-area,
 .page .content-area {
@@ -300,8 +301,8 @@ Content
 .container {
   max-width: $container-width;
   margin: 0 auto;
-  // padding-left: 50px;
-  // padding-right: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .inside-wrapper {
   max-width: $inside-wrapper-width;
@@ -500,4 +501,12 @@ Footer
     text-decoration: none;
     color: #666666;
   }
+}
+
+@media screen and (max-width: 767px) {
+
+  .content-area {
+    padding-top: 0;
+  }
+
 }
