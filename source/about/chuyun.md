@@ -7,14 +7,9 @@ title: 出云
 我就是我颜色不一样的烟火， 善良文静而又腼腆且不失帅气， 一直承受着我这个年纪不该有的机智和帅气
 
 ![avatar](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1526488799455&di=4ff62f70fef743ebd154a6255164bb40&imgtype=0&src=http%3A%2F%2Fp.chanyouji.cn%2F1406033158%2F3s5ziczv0x9dmzby0yqf1obft.jpg)
-
-
 &nbsp;&nbsp;
 
-
-
 我的心眼
-
 &nbsp;
 ![avatar](http://5b0988e595225.cdn.sohucs.com/images/20170906/d4e863705e994906ade0cb1aadc93987.jpeg)
 

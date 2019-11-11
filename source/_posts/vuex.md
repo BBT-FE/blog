@@ -4,7 +4,7 @@ date:
 tag:
  - 出云 
 photos:
- - https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1521722355,149999211&fm=26&gp=0.jpg
+ - http://img.mp.itc.cn/upload/20161008/e8fadf087de643e8862d2836d0a65bba_th.png
 ---
 
 vue - vuex 学习

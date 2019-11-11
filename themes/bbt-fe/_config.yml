@@ -20,6 +20,8 @@ highlight:
 nav:
   home: .
   view: view
+  tags: tags
+  reading: reading
   archive: archives
   about: about
   # rss: atom.xml
