@@ -525,8 +525,8 @@ Content
 .container {
   max-width: 600px;
   margin: 0 auto;
-  padding-left: 50px;
-  padding-right: 50px; }
+  padding-left: 15px;
+  padding-right: 15px; }
 
 .inside-wrapper {
   max-width: 920px;
@@ -708,6 +708,10 @@ Footer
     text-decoration: none;
     color: #666666; }
 
+@media screen and (max-width: 767px) {
+  .content-area {
+    padding-top: 0; } }
+
 .site-header {
   width: 100%;
   background: #fff;
@@ -786,8 +790,8 @@ Footer
   width: 100%; }
 
 .post {
-  padding-top: 70px;
-  padding-bottom: 70px; }
+  padding-top: 0;
+  padding-bottom: 0; }
   .post .nav-links a {
     text-decoration: none;
     color: #3a3a3a;
@@ -1079,9 +1083,6 @@ pre {
     padding-left: 20px; } }
 
 @media screen and (max-width: 320px) {
-  .container {
-    padding-left: 20px;
-    padding-right: 20px; }
   .site-header,
   .page .site-header,
   .home.paged .site-header {
