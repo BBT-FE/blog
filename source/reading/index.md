@@ -12,6 +12,14 @@ date: 2019-11-11 18:23:17
   <div class="list-right"><img src="../assets/img/read_1.jpg" /></div>
 </div>
 
+<div class="list">
+  <div class="list-left">
+    <a href="https://bbt-fe.github.io/blog/reading/2.html">过你想要的生活</a>
+    <p style="color: #999">2019年11月12日</p>
+  </div>
+  <div class="list-right"><img src="../assets/img/read_1.jpg" /></div>
+</div>
+
 <style lang="scss">
   .list {
     display: flex;
