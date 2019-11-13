@@ -16,7 +16,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="Git"/>
+      <meta property="og:title" content="生命周期相关面试题"/>
   
   <!--Open Graph Description-->
   
@@ -33,7 +33,7 @@
 
   <!-- Title -->
   
-  <title>Git - BBT</title>
+  <title>生命周期相关面试题 - 出云 - BBT</title>
 
 
   <link rel="shortcut icon" href="https://avatars0.githubusercontent.com/u/31090575?s=200&v=4">
@@ -145,52 +145,34 @@
         <!-- Title date & tags -->
         <div class="post-header">
           <h1 class="entry-title">
-            Git
+            生命周期相关面试题
             
           </h1>
           <p class="posted-on">
-          2019-11-11
+          2019-11-12
           </p>
           <div class="tags-links">
-            
-              
-                <a href="/tags/出云/" rel="tag">
-                  出云
-                </a>
-              
             
           </div>
         </div>
         <!-- Post Main Content -->
         <div class="entry-content">
-          <p>Git 常用操作<br><a id="more"></a></p>
-<h4 id="Git基本工作流程："><a href="#Git基本工作流程：" class="headerlink" title="Git基本工作流程："></a>Git基本工作流程：</h4><p>  创建分支<br>    git branch 分支名称<br>  查看分支<br>    git branch<br>  切换分支<br>    git checkout 分支名称<br>  创建并切换分支<br>    git checkout -b 分支名称<br>  分支删除<br>    git branch -d 分支名称<br>  将本地分支上传到远程服务器<br>    git push -u origin version0 　注：-u是–set-upstream的缩写）<br>  查看当前分支工作区，暂存区的工作状态<br>    git status<br>  查看修改文件<br>    git diff<br>  提交本次修改<br>    git add .<br>    git commit -m’本次修改备注’<br>  把当前的工作隐藏起来 等以后恢复现场后继续工作<br>    git stash<br>  恢复工作现场（恢复隐藏的文件，同时删除stash列表中对应的内容）<br>    git stash pop</p>
-<pre><code>1. git status
-</code></pre><p>命令用于显示工作目录和暂存区的状态。使用此命令能看到那些修改被暂存到了, 哪些没有, 哪些文件没有被Git tracked到。git status不显示已经commit到项目历史中去的信息。</p>
-<ol start="2">
-<li>git add <file><br>命令将文件内容添加到索引(将修改添加到暂存区)。也就是将要提交的文件的信息添加到索引库中。</file></li>
-<li>git add .<br>命令将所有的修改文件上传到暂缓区。</li>
-<li>git commit -m’修改记录’<br>推送修改到本地库中。</li>
-<li>git pull<br>服务器上的仓库中代码拉到本地</li>
-<li>git push<br>将本地仓库修改推送到服务器上的仓库中</li>
-<li>git merge<br>合并分支<br>在本地修改代码add 过后没有提交成功，当前修改代码丢失时执行（8，9条命令）</li>
-<li>git reset –hard HEAD~1<br>回退到上一个版本</li>
-<li><p>git fsck –lost-found<br>执行该命令</p>
-</li>
-<li><p>git log<br>查看提交历史</p>
-</li>
-<li><p>git remote add origin 地址<br>本地库关联远程仓库</p>
-</li>
-<li><p>git stash<br>可用来暂存当前正在进行的工作， 比如想pull 最新代码， 又不想加新commit， 或者另外一种情况，为了fix 一个紧急的bug,  先stash, 使返回到自己上一个commit, 改完bug之后再stash pop, 继续原来的工作。</p>
-</li>
-<li><p>git stash pop<br>释放stash暂存</p>
-</li>
-<li><p>git diff<br>命令用于显示提交和工作树等之间的更改。此命令比较的是工作目录中当前文件和暂存区域快照之间的差异,也就是修改之后还没有暂存起来的变化内容。</p>
-</li>
-<li><p>合并分支部分文件<br>现有A、B两个分支，需要把B分支下的某个文件合并到A分支，执行命令</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout A</span><br><span class="line">git checkout B &lt;file&gt;(文件路径位置)</span><br></pre></td></tr></table></figure>
+          <!-- 引言（简介） -->
+<a id="more"></a>
+<!-- 详细内容 -->
+<p>创建前/后： 在beforeCreate阶段，vue实例的挂载元素el和数据对象data都为undefined，还未初始化。在created阶段，vue实例的数据对象data有了，el还没有。</p>
+<p>载入前/后：在beforeMount阶段，vue实例的$el和data都初始化了，但还是挂载之前为虚拟的dom节点，data.message还未替换。在mounted阶段，vue实例挂载完成，data.message成功渲染。</p>
+<p>更新前/后：当data变化时，会触发beforeUpdate和updated方法。</p>
+<p>销毁前/后：在执行destroy方法后，对data的改变不会再触发周期函数，说明此时vue实例已经解除了事件监听以及和dom的绑定，但是dom结构依然存在</p>
+<h4 id="1、什么是vue生命周期"><a href="#1、什么是vue生命周期" class="headerlink" title="1、什么是vue生命周期"></a>1、什么是vue生命周期</h4><p>答： Vue 实例从创建到销毁的过程，就是生命周期。也就是从开始创建、初始化数据、编译模板、挂载Dom→渲染、更新→渲染、卸载等一系列过程，我们称这是 Vue 的生命周期。</p>
+<h4 id="2、vue生命周期的作用是什么"><a href="#2、vue生命周期的作用是什么" class="headerlink" title="2、vue生命周期的作用是什么"></a>2、vue生命周期的作用是什么</h4><p>答：它的生命周期中有多个事件钩子，让我们在控制整个Vue实例的过程时更容易形成好的逻辑。</p>
+<h4 id="3、vue生命周期总共有几个阶段"><a href="#3、vue生命周期总共有几个阶段" class="headerlink" title="3、vue生命周期总共有几个阶段"></a>3、vue生命周期总共有几个阶段</h4><p>答：可以总共分为8个阶段：创建前/后, 载入前/后,更新前/后,销毁前/销毁后</p>
+<h4 id="4、第一次页面加载会触发哪几个钩子"><a href="#4、第一次页面加载会触发哪几个钩子" class="headerlink" title="4、第一次页面加载会触发哪几个钩子"></a>4、第一次页面加载会触发哪几个钩子</h4><p>答：第一次页面加载时会触发 beforeCreate, created, beforeMount, mounted 这几个钩子</p>
+<h4 id="5、DOM-渲染在-哪个周期中就已经完成"><a href="#5、DOM-渲染在-哪个周期中就已经完成" class="headerlink" title="5、DOM 渲染在 哪个周期中就已经完成"></a>5、DOM 渲染在 哪个周期中就已经完成</h4><p>答：DOM 渲染在 mounted 中就已经完成了。</p>
+<h4 id="6、简单描述每个周期具体适合哪些场景"><a href="#6、简单描述每个周期具体适合哪些场景" class="headerlink" title="6、简单描述每个周期具体适合哪些场景"></a>6、简单描述每个周期具体适合哪些场景</h4><p>  答：生命周期钩子的一些使用方法：<br>  beforecreate : 可以在这加个loading事件，在加载实例时触发<br>  created : 初始化完成时的事件写在这里，如在这结束loading事件，异步请求也适宜在这里调用<br>  mounted : 挂载元素，获取到DOM节点<br>  updated : 如果对数据统一处理，在这里写上相应函数<br>  beforeDestroy : 可以做一个确认停止事件的确认框<br>  nextTick : 更新数据后立即操作dom</p>
+<p>  mounted 是生命周期方法之一，会在对应生命周期时执行。<br>  而   methods 是Vue实例对象上绑定的方法，供当前Vue组件作用域内使用，未调用不会执行。<br>  而   computed 是计算属性  属性 method是 方法<br>  在使用时   computed函数直接使用  method需要加上（）【如method（）】来执行 </p>
+<p>  computed计算的结果如果不发生改变就不会触发。</p>
+
         </div>
       </article>
     </div>
@@ -208,10 +190,6 @@
     <!-- Pre or Next -->
     <div class="nav-links">
       
-      
-        <div class="nav-next">
-          <a href="/2019/09/26/Array/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
-        </div>
       
     </div>
 

@@ -16,7 +16,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="Git"/>
+      <meta property="og:title" content="性能优化问题"/>
   
   <!--Open Graph Description-->
   
@@ -33,7 +33,7 @@
 
   <!-- Title -->
   
-  <title>Git - BBT</title>
+  <title>性能优化问题 - 出云 - BBT</title>
 
 
   <link rel="shortcut icon" href="https://avatars0.githubusercontent.com/u/31090575?s=200&v=4">
@@ -145,52 +145,64 @@
         <!-- Title date & tags -->
         <div class="post-header">
           <h1 class="entry-title">
-            Git
+            性能优化问题
             
           </h1>
           <p class="posted-on">
-          2019-11-11
+          2019-11-12
           </p>
           <div class="tags-links">
-            
-              
-                <a href="/tags/出云/" rel="tag">
-                  出云
-                </a>
-              
             
           </div>
         </div>
         <!-- Post Main Content -->
         <div class="entry-content">
-          <p>Git 常用操作<br><a id="more"></a></p>
-<h4 id="Git基本工作流程："><a href="#Git基本工作流程：" class="headerlink" title="Git基本工作流程："></a>Git基本工作流程：</h4><p>  创建分支<br>    git branch 分支名称<br>  查看分支<br>    git branch<br>  切换分支<br>    git checkout 分支名称<br>  创建并切换分支<br>    git checkout -b 分支名称<br>  分支删除<br>    git branch -d 分支名称<br>  将本地分支上传到远程服务器<br>    git push -u origin version0 　注：-u是–set-upstream的缩写）<br>  查看当前分支工作区，暂存区的工作状态<br>    git status<br>  查看修改文件<br>    git diff<br>  提交本次修改<br>    git add .<br>    git commit -m’本次修改备注’<br>  把当前的工作隐藏起来 等以后恢复现场后继续工作<br>    git stash<br>  恢复工作现场（恢复隐藏的文件，同时删除stash列表中对应的内容）<br>    git stash pop</p>
-<pre><code>1. git status
-</code></pre><p>命令用于显示工作目录和暂存区的状态。使用此命令能看到那些修改被暂存到了, 哪些没有, 哪些文件没有被Git tracked到。git status不显示已经commit到项目历史中去的信息。</p>
-<ol start="2">
-<li>git add <file><br>命令将文件内容添加到索引(将修改添加到暂存区)。也就是将要提交的文件的信息添加到索引库中。</file></li>
-<li>git add .<br>命令将所有的修改文件上传到暂缓区。</li>
-<li>git commit -m’修改记录’<br>推送修改到本地库中。</li>
-<li>git pull<br>服务器上的仓库中代码拉到本地</li>
-<li>git push<br>将本地仓库修改推送到服务器上的仓库中</li>
-<li>git merge<br>合并分支<br>在本地修改代码add 过后没有提交成功，当前修改代码丢失时执行（8，9条命令）</li>
-<li>git reset –hard HEAD~1<br>回退到上一个版本</li>
-<li><p>git fsck –lost-found<br>执行该命令</p>
+          <p>主要有两个方面：<br>  减少页面加载的时间<br>  提升用户角度的感官体验<br>  减少页面加载所需要的时间，可以从请求数量、请求并发及网络传输的角度出发；提升用户感官体验，则主要是让页面尽快展示。</p>
+<p>  1.减少HTTP请求，把一些资源合并<br>  2.合理使用浏览器缓存<br>  3.使用压缩，尽可能的将外部的脚本、样式进行合并，多个合为一个,之前看的jquery.mini和普通版就是很好的例子<br>  4.CDN加速，本质仍然是一个缓存，而且将数据缓存在离用户最近的地方，使用户以最快速度获取数据，即所谓网络访问第一跳<br>  5.CSS放在页面最上部，js放在页面最下面，js阻塞 HTML 和 CSS 元素的加载过程<br>  6.采用合适的CSS来替换图片图标，减少图片请求</p>
+<ol>
+<li><p>减少网络时间<br>所有的服务端资源都经过 DNS 解析 至 建立连接 至断开连接的过程，因此可以从以下几个方面入手</p>
+<p>使用 DNS 缓存技术<br> 一般浏览器本身具有一定的 DNS 缓存机制，所以服务端的 DNS 缓存不能引起太大的提升</p>
+<p>减少传输文件的尺寸<br> 将文件进行压缩<br> 利用混淆的方式减少 JS 文件和样式表的大小<br> 从 JS 文件中去掉不需要的部分</p>
+<p>加快文件传输速度<br> 使用 CDN 技术</p>
 </li>
-<li><p>git log<br>查看提交历史</p>
+<li><p>减少请求的数量</p>
+<p>利用浏览器缓存<br> 为充分利用浏览器缓存，需要在服务器端保证每个可以被缓存的资源在服务端返回时附带合适的 expires 头信息尽量把页面中很少改变的部分提取出来<br>使用引用的方式加载 JS 和样式表<br> 使用 URI</p>
+<p>使用合并的图片文件<br> 当页面包含很多小图片文件时，可以考虑将小图片合并成一个大图片，在页面中使用 CSS Sprites 技术将大图片显示分割成小图片，这种方式可以大量减少 http 请求数量</p>
 </li>
-<li><p>git remote add origin 地址<br>本地库关联远程仓库</p>
+<li><p>提高浏览器下载的并发度</p>
+<p>JS 文件放在 HTML 文件最后加载<br>使用多个域名</p>
 </li>
-<li><p>git stash<br>可用来暂存当前正在进行的工作， 比如想pull 最新代码， 又不想加新commit， 或者另外一种情况，为了fix 一个紧急的bug,  先stash, 使返回到自己上一个commit, 改完bug之后再stash pop, 继续原来的工作。</p>
-</li>
-<li><p>git stash pop<br>释放stash暂存</p>
-</li>
-<li><p>git diff<br>命令用于显示提交和工作树等之间的更改。此命令比较的是工作目录中当前文件和暂存区域快照之间的差异,也就是修改之后还没有暂存起来的变化内容。</p>
-</li>
-<li><p>合并分支部分文件<br>现有A、B两个分支，需要把B分支下的某个文件合并到A分支，执行命令</p>
+<li><p>让页面尽早显示</p>
+<p>将样式表放在 HTML 文件头部加载<br>JS 引用放在最后加载</p>
 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout A</span><br><span class="line">git checkout B &lt;file&gt;(文件路径位置)</span><br></pre></td></tr></table></figure>
+<p>代码层面：避免使用css表达式，避免使用高级选择器，通配选择器。</p>
+<p>缓存利用：缓存Ajax，使用CDN，使用外部js和css文件以便缓存，添加Expires头，服务端配置Etag，减少DNS查找等</p>
+<p>请求数量：合并样式和脚本，使用css图片精灵，初始首屏之外的图片资源按需加载，静态资源延迟加载。</p>
+<p>请求带宽：压缩文件，开启GZIP，</p>
+<p>代码层面的优化</p>
+<p>用hash-table来优化查找</p>
+<p>少用全局变量</p>
+<p>用innerHTML代替DOM操作，减少DOM操作次数，优化javascript性能</p>
+<p>用setTimeout来避免页面失去响应</p>
+<p>缓存DOM节点查找的结果</p>
+<p>避免使用CSS Expression</p>
+<p>避免全局查询</p>
+<p>避免使用with(with会创建自己的作用域，会增加作用域链长度)</p>
+<p>多个变量声明合并</p>
+<p>避免图片和iFrame等的空Src。空Src会重新加载当前页面，影响速度和效率</p>
+<p>尽量避免写在HTML标签中写Style属性</p>
+<p>移动端性能优化</p>
+<p>尽量使用css3动画，开启硬件加速。</p>
+<p>适当使用touch事件代替click事件。</p>
+<p>避免使用css3渐变阴影效果。</p>
+<p>可以用transform: translateZ(0)来开启硬件加速。</p>
+<p>不滥用Float。Float在渲染时计算量比较大，尽量减少使用</p>
+<p>不滥用Web字体。Web字体需要下载，解析，重绘当前页面，尽量减少使用。</p>
+<p>合理使用requestAnimationFrame动画代替setTimeout</p>
+<p>CSS中的属性（CSS3 transitions、CSS3 3D transforms、Opacity、Canvas、WebGL、Video）会触发GPU渲染，请合理使用。过渡使用会引发手机过耗电增加</p>
+<p>PC端的在移动端同样适用</p>
+
         </div>
       </article>
     </div>
@@ -208,10 +220,6 @@
     <!-- Pre or Next -->
     <div class="nav-links">
       
-      
-        <div class="nav-next">
-          <a href="/2019/09/26/Array/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
-        </div>
       
     </div>
 

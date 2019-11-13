@@ -16,7 +16,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="Git"/>
+      <meta property="og:title" content="webpack"/>
   
   <!--Open Graph Description-->
   
@@ -33,7 +33,7 @@
 
   <!-- Title -->
   
-  <title>Git - BBT</title>
+  <title>webpack - 出云 - BBT</title>
 
 
   <link rel="shortcut icon" href="https://avatars0.githubusercontent.com/u/31090575?s=200&v=4">
@@ -145,52 +145,47 @@
         <!-- Title date & tags -->
         <div class="post-header">
           <h1 class="entry-title">
-            Git
+            webpack
             
           </h1>
           <p class="posted-on">
-          2019-11-11
+          2019-11-12
           </p>
           <div class="tags-links">
-            
-              
-                <a href="/tags/出云/" rel="tag">
-                  出云
-                </a>
-              
             
           </div>
         </div>
         <!-- Post Main Content -->
         <div class="entry-content">
-          <p>Git 常用操作<br><a id="more"></a></p>
-<h4 id="Git基本工作流程："><a href="#Git基本工作流程：" class="headerlink" title="Git基本工作流程："></a>Git基本工作流程：</h4><p>  创建分支<br>    git branch 分支名称<br>  查看分支<br>    git branch<br>  切换分支<br>    git checkout 分支名称<br>  创建并切换分支<br>    git checkout -b 分支名称<br>  分支删除<br>    git branch -d 分支名称<br>  将本地分支上传到远程服务器<br>    git push -u origin version0 　注：-u是–set-upstream的缩写）<br>  查看当前分支工作区，暂存区的工作状态<br>    git status<br>  查看修改文件<br>    git diff<br>  提交本次修改<br>    git add .<br>    git commit -m’本次修改备注’<br>  把当前的工作隐藏起来 等以后恢复现场后继续工作<br>    git stash<br>  恢复工作现场（恢复隐藏的文件，同时删除stash列表中对应的内容）<br>    git stash pop</p>
-<pre><code>1. git status
-</code></pre><p>命令用于显示工作目录和暂存区的状态。使用此命令能看到那些修改被暂存到了, 哪些没有, 哪些文件没有被Git tracked到。git status不显示已经commit到项目历史中去的信息。</p>
-<ol start="2">
-<li>git add <file><br>命令将文件内容添加到索引(将修改添加到暂存区)。也就是将要提交的文件的信息添加到索引库中。</file></li>
-<li>git add .<br>命令将所有的修改文件上传到暂缓区。</li>
-<li>git commit -m’修改记录’<br>推送修改到本地库中。</li>
-<li>git pull<br>服务器上的仓库中代码拉到本地</li>
-<li>git push<br>将本地仓库修改推送到服务器上的仓库中</li>
-<li>git merge<br>合并分支<br>在本地修改代码add 过后没有提交成功，当前修改代码丢失时执行（8，9条命令）</li>
-<li>git reset –hard HEAD~1<br>回退到上一个版本</li>
-<li><p>git fsck –lost-found<br>执行该命令</p>
+          <!-- 引言（简介） -->
+<a id="more"></a>
+<!-- 详细内容 -->
+<!--more-->
+<p>WebPack 是一个模块打包工具，你可以使用WebPack管理你的模块依赖，并编绎输出模块们所需的静态文件。它能够很好地管理、打包Web开发中所用到的HTML、JavaScript、CSS以及各种静态文件（图片、字体等），让开发过程更加高效。对于不同类型的资源，webpack有对应的模块加载器。webpack模块打包器会分析模块间的依赖关系，最后 生成了优化且合并后的静态资源。</p>
+<p>webpack的两大特色：</p>
+<p>1.code splitting（可以自动完成）</p>
+<p>2.loader 可以处理各种类型的静态文件，并且支持串联操作</p>
+<p>webpack 是以commonJS的形式来书写脚本滴，但对 AMD/CMD 的支持也很全面，方便旧项目进行代码迁移。</p>
+<p>webpack具有requireJs和browserify的功能，但仍有很多自己的新特性：</p>
+<ol>
+<li><p>对 CommonJS 、 AMD、ES6的语法做了兼容</p>
 </li>
-<li><p>git log<br>查看提交历史</p>
+<li><p>对js、css、图片等资源文件都支持打包</p>
 </li>
-<li><p>git remote add origin 地址<br>本地库关联远程仓库</p>
+<li><p>串联式模块加载器以及插件机制，让其具有更好的灵活性和扩展性，例如提供对CoffeeScript、ES6的支持</p>
 </li>
-<li><p>git stash<br>可用来暂存当前正在进行的工作， 比如想pull 最新代码， 又不想加新commit， 或者另外一种情况，为了fix 一个紧急的bug,  先stash, 使返回到自己上一个commit, 改完bug之后再stash pop, 继续原来的工作。</p>
+<li><p>有独立的配置文件webpack.config.js</p>
 </li>
-<li><p>git stash pop<br>释放stash暂存</p>
+<li><p>可以将代码切割成不同的chunk，实现按需加载，降低了初始化时间</p>
 </li>
-<li><p>git diff<br>命令用于显示提交和工作树等之间的更改。此命令比较的是工作目录中当前文件和暂存区域快照之间的差异,也就是修改之后还没有暂存起来的变化内容。</p>
+<li><p>支持 SourceUrls 和SourceMaps，易于调试</p>
 </li>
-<li><p>合并分支部分文件<br>现有A、B两个分支，需要把B分支下的某个文件合并到A分支，执行命令</p>
+<li><p>具有强大的Plugin接口，大多是内部插件，使用起来比较灵活</p>
 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout A</span><br><span class="line">git checkout B &lt;file&gt;(文件路径位置)</span><br></pre></td></tr></table></figure>
+<p>8.webpack 使用异步 IO 并具有多级缓存。这使得 webpack 很快且在增量编译上更加快</p>
+<h4 id="介绍下-webpack-热更新原理，是如何做到在不刷新浏览器的前提下更新页面-118"><a href="#介绍下-webpack-热更新原理，是如何做到在不刷新浏览器的前提下更新页面-118" class="headerlink" title="介绍下 webpack 热更新原理，是如何做到在不刷新浏览器的前提下更新页面 #118"></a>介绍下 webpack 热更新原理，是如何做到在不刷新浏览器的前提下更新页面 #118</h4><p>1.当修改了一个或多个文件；<br>2.文件系统接收更改并通知webpack；<br>3.webpack重新编译构建一个或多个模块，并通知HMR服务器进行更新；<br>4.HMR Server 使用webSocket通知HMR runtime 需要更新，HMR运行时通过HTTP请求更新jsonp；<br>5.HMR运行时替换更新中的模块，如果确定这些模块无法更新，则触发整个页面刷新。</p>
+
         </div>
       </article>
     </div>
@@ -208,10 +203,6 @@
     <!-- Pre or Next -->
     <div class="nav-links">
       
-      
-        <div class="nav-next">
-          <a href="/2019/09/26/Array/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
-        </div>
       
     </div>
 
