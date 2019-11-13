@@ -51,18 +51,21 @@ title: View
 5. <a href="https://bbt-fe.github.io/blog/view/vue/405.html">vue-router有哪几种导航钩子</a>
 6. <a href="https://bbt-fe.github.io/blog/view/vue/406.html">生命周期相关面试题</a>
 7. <a href="https://bbt-fe.github.io/blog/view/vue/407.html">写 React / Vue 项目时为什么要在列表组件中写 key，其作用是什么？</a>
-8. <a href="https://bbt-fe.github.io/blog/view/vue/408.html">react-router 里的 <Link> 标签和 <a> 标签有什么区别</a>
+8. <a href="https://bbt-fe.github.io/blog/view/vue/408.html">react-router 里的 Link 标签和 a 标签有什么区别</a>
 9. <a href="https://bbt-fe.github.io/blog/view/vue/409.html">v-if和v-show</a>
 10. <a href="https://bbt-fe.github.io/blog/view/vue/410.html">watch和compunt</a>
 
 #### Webpack
-<a href="https://bbt-fe.github.io/blog/view/webpack/700.html"></a>
+<a href="https://bbt-fe.github.io/blog/view/webpack/700.html">Webpack</a>
 
 #### http
 <a href="https://bbt-fe.github.io/blog/view/http/800.html">http介绍</a>
+
 #### git
+<a href="http://bbt-fe.top/2019/11/11/Git/"> git </a>
+
 #### 其他
-<a href="https://bbt-fe.github.io/blog/view/other/900.html">一个页面从输入 URL 到页面加载完的过程中都发生了什么事情？越详细越好</a>
-<a href="https://bbt-fe.github.io/blog/view/other/901.html">性能优化问题</a>
-<a href="https://bbt-fe.github.io/blog/view/other/903.html">模块化 AMD CMD 和 https://www.cnblogs.com/beyonds/p/8992619.html</a>
-<a href="https://bbt-fe.github.io/blog/view/other/903.html">说说你对MVC和MVVM的理解</a>
+1. <a href="https://bbt-fe.github.io/blog/view/other/900.html">一个页面从输入 URL 到页面加载完的过程中都发生了什么事情？越详细越好</a>
+2. <a href="https://bbt-fe.github.io/blog/view/other/901.html">性能优化问题</a>
+3. <a href="https://bbt-fe.github.io/blog/view/other/902.html">模块化 AMD CMD 和 https://www.cnblogs.com/beyonds/p/8992619.html</a>
+4. <a href="https://bbt-fe.github.io/blog/view/other/903.html">说说你对MVC和MVVM的理解</a>
