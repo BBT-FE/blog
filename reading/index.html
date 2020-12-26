@@ -158,49 +158,49 @@
         <!-- Post Main Content -->
         <div class="entry-content">
           <!-- 引言（简介） -->
-<div id="xiyan"><br>  <label>用户名：<input id="name" type="text"></label><br>  <label>&nbsp;&nbsp;&nbsp;&nbsp;密码：<input id="pwd" type="text"></label><br>  <p id="err">账号密码不匹配</p><br>  <button id="denglu">登陆</button><br></div>
-
+<!-- <div id="xiyan">
+  <label>用户名：<input id="name" type="text" /></label>
+  <label>&nbsp;&nbsp;&nbsp;&nbsp;密码：<input id="pwd" type="text" /></label>
+  <p id="err">账号密码不匹配</p>
+  <button id="denglu">登陆</button>
+</div> -->
 <div id="list"><br>  <div class="list"><br>    <div class="list-left"><br>      <a href="https://bbt-fe.github.io/blog/reading/1.html">我不是最好的，却是你再也遇不到的</a><br>      <p style="color: #999">2019年11月11日</p><br>    </div><br>    <div class="list-right"><img src="../assets/img/read_1.jpg"></div><br>  </div>
 
   <div class="list"><br>    <div class="list-left"><br>      <a href="https://bbt-fe.github.io/blog/reading/2.html">过你想要的生活</a><br>      <p style="color: #999">2019年11月12日</p><br>    </div><br>    <div class="list-right"><img src="../assets/img/read_2.jpeg"></div><br>  </div>
 
-  <!-- <div class="list">
-    <div class="list-left">
-      <a href="https://bbt-fe.github.io/blog/reading/3.html">亲情之外，友情之上，恋人未满</a>
-      <p style="color: #999">2019年11月22日</p>
-    </div>
-    <div class="list-right"><img src="../assets/img/read_3.jpeg" /></div>
-  </div> -->
-<p></p></div><p></p>
+  <div class="list"><br>    <div class="list-left"><br>      <a href="https://bbt-fe.github.io/blog/reading/3.html">亲情之外，友情之上，恋人未满</a><br>      <p style="color: #999">2019年11月22日</p><br>    </div><br>    <div class="list-right"><img src="../assets/img/read_3.jpeg"></div><br>  </div>
+
+  <div class="list"><br>    <div class="list-left"><br>      <a href="https://bbt-fe.github.io/blog/reading/4.html">怕什么，来什么，盼什么，没什么。</a><br>      <p style="color: #999">2020年12月26日</p><br>    </div><br>    <div class="list-right"><img src="../assets/img/read_4.jpg"></div><br>  </div><br>  <div class="list"><br>    <div class="list-left"><br>      <a href="https://bbt-fe.github.io/blog/reading/5.html">一个小故事</a><br>      <p style="color: #999">2020年12月27日</p><br>    </div><br>    <div class="list-right"><img src="../assets/img/read_5.jpg"></div><br>  </div><br></div>
+
 <script>
+  list.style.display = 'block'
+  // var denglu = document.getElementById('denglu')
+  // var list = document.getElementById('list')
+  // var err = document.getElementById('err')
+  // var xiyan = document.getElementById('xiyan')
 
-  var denglu = document.getElementById('denglu')
-  var list = document.getElementById('list')
-  var err = document.getElementById('err')
-  var xiyan = document.getElementById('xiyan')
+  // function login() {
+  //   var name = document.getElementById('name').value
+  //   var pwd = document.getElementById('pwd').value
+  //   if( name == "" || name == undefined){
+  //     alert("请输入用户名");
+  //     return false;
+  //   }
+  //   if(pwd == "" || pwd == undefined){
+  //     alert("请输入密码");
+  //     return false;
+  //   }
+  //   if (name == '钟宝宝' && pwd === 'buaile') {
+  //     list.style.display = 'block'
+  //     xiyan.style.display = 'none'
+  //   } else {
+  //     err.style.display = 'block'
+  //   }
+  // }
 
-  function login() {
-    var name = document.getElementById('name').value
-    var pwd = document.getElementById('pwd').value
-    if( name == "" || name == undefined){
-      alert("请输入用户名");
-      return false;
-    }
-    if(pwd == "" || pwd == undefined){
-      alert("请输入密码");
-      return false;
-    }
-    if (name == 'zhouzhou' && pwd === 'xiaozhou') {
-      list.style.display = 'block'
-      xiyan.style.display = 'none'
-    } else {
-      err.style.display = 'block'
-    }
-  }
-
-  denglu.onclick = function() {
-    login()
-  }
+  // denglu.onclick = function() {
+  //   login()
+  // }
 
 </script>
 
@@ -314,7 +314,7 @@
 <!-- Footer -->
 <footer class="site-info">
   <p>
-    <span>BBT &copy; 2019</span>
+    <span>BBT &copy; 2020</span>
     
       <span class="split">|</span>
       <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with Theme <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank">Daily</a></span>

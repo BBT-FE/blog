@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="zhou zhou">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="工作"/>
+  
+  <!--Open Graph Description-->
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="BBT"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>工作 - BBT</title>
+
+
+  <link rel="shortcut icon" href="https://avatars0.githubusercontent.com/u/31090575?s=200&v=4">
+
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!----------------------------
+  https://github.com/GallenHu/hexo-theme-Daily
+
+ _____            _   _
+|  __ \          (_) | |
+| |  | |   __ _   _  | |  _   _
+| |  | |  / _` | | | | | | | | |
+| |__| | | (_| | | | | | | |_| |
+|_____/   \__,_| |_| |_|  \__, |
+                          __/ |
+                         |___/
+
+    --------------------------->
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="https://avatars0.githubusercontent.com/u/31090575?s=200&v=4" alt="BBT" height="60">
+        
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/view">
+                
+                  view
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/tags">
+                
+                  tags
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/reading">
+                
+                  reading
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  archive
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  about
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            工作
+            
+          </h1>
+          <p class="posted-on">
+          2020-10-10
+          </p>
+          <div class="tags-links">
+            
+              
+                <a href="/tags/出云/" rel="tag">
+                  出云
+                </a>
+              
+            
+          </div>
+        </div>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <!-- 引言（简介） -->
+<ol>
+<li>外卖</li>
+<li>审批</li>
+<li><p>hr</p>
+<a id="more"></a>
+<h3 id="外卖"><a href="#外卖" class="headerlink" title="外卖"></a>外卖</h3><h4 id="精选页-src-gt-pages-gt-app-gt-Pages-gt-basic-gt-Takeout-rewrite"><a href="#精选页-src-gt-pages-gt-app-gt-Pages-gt-basic-gt-Takeout-rewrite" class="headerlink" title="精选页: src &gt; pages &gt; app &gt; Pages &gt; basic &gt; Takeout_rewrite"></a>精选页: <code>src &gt; pages &gt; app &gt; Pages &gt; basic &gt; Takeout_rewrite</code></h4><p>页面缓存：蔡亦轩， 定位：陈亦好， 其他： 郝航宙<br>后台： 张富生</p>
+<h6 id="1-定位逻辑"><a href="#1-定位逻辑" class="headerlink" title="1. 定位逻辑"></a>1. 定位逻辑</h6><ul>
+<li>点击精选 =&gt; 判断是否设置默认位置<ul>
+<li>是： 精选页使用设置的位置信息</li>
+<li>否： 精选页定位</li>
+</ul>
+</li>
+<li>扫物业码 =&gt; 点击图片 =&gt; 根据url上source判断从物业码进入，定位选择物业小区名称</li>
+<li>判断方法<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> initData() &#123;</span><br><span class="line">  <span class="comment">// 是否有缓存位置信息，有则取缓存位置</span></span><br><span class="line">  <span class="keyword">let</span> locationInfo = <span class="built_in">JSON</span>.parse(localStorage.getItem(<span class="string">'locationInfo'</span>))</span><br><span class="line">  <span class="comment">// 判断是否需要取缓存位置， 在 Customer =&gt; index 存fromcustomer, 从点菜页返回到精选需要取之前地址</span></span><br><span class="line">  <span class="keyword">let</span> fromcustomer = localStorage.getItem(<span class="string">'fromcustomer'</span>) </span><br><span class="line">  <span class="keyword">if</span> (locationInfo &amp;&amp; fromcustomer) &#123;</span><br><span class="line">    <span class="keyword">this</span>.locationInfo = locationInfo</span><br><span class="line">    <span class="keyword">this</span>.addr = <span class="keyword">this</span>.locationInfo.addr</span><br><span class="line">    <span class="keyword">this</span>.longitude = <span class="keyword">this</span>.locationInfo.longitude</span><br><span class="line">    <span class="keyword">this</span>.latitude = <span class="keyword">this</span>.locationInfo.latitude</span><br><span class="line">    localStorage.removeItem(<span class="string">'fromcustomer'</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (locationInfo) &#123;</span><br><span class="line">      localStorage.removeItem(<span class="string">'locationInfo'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 这个用在pc端展示， 主要用于调试</span></span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">this</span>.source || (!isMhApp() &amp;&amp; !isWeiXin())) &#123;</span><br><span class="line">      <span class="keyword">this</span>.searchCompanyName()</span><br><span class="line">      <span class="keyword">this</span>.getList()</span><br><span class="line">      <span class="keyword">this</span>.findStoreExternalCouponActivityDetail()</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">// 判断是否设置默认位置 if (data &amp;&amp; checked === 'true') ? 则取默认设置位置 : 去定位resetPos()</span></span><br><span class="line">      <span class="keyword">this</span>.findConfigByKeyAndCompanyId()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="2-其他-就是list列表，休息就置灰，-后台返回字段"><a href="#2-其他-就是list列表，休息就置灰，-后台返回字段" class="headerlink" title="2. 其他 就是list列表，休息就置灰， 后台返回字段"></a>2. 其他 就是list列表，休息就置灰， 后台返回字段</h6></li>
+</ol>
+<h4 id="精选页-src-gt-pages-gt-Takeout-gt-Pages-gt-App-gt-Customer-gt-index"><a href="#精选页-src-gt-pages-gt-Takeout-gt-Pages-gt-App-gt-Customer-gt-index" class="headerlink" title="精选页: src &gt; pages &gt; Takeout &gt; Pages &gt; App &gt; Customer &gt; index"></a>精选页: <code>src &gt; pages &gt; Takeout &gt; Pages &gt; App &gt; Customer &gt; index</code></h4><p>  页面： 郝航宙<br>  后台： 王国兴</p>
+<h6 id="1-金额计算"><a href="#1-金额计算" class="headerlink" title="1. 金额计算"></a>1. 金额计算</h6><p>  结算金额 =&gt; （单价 + 包装费） * 数量 - 满减</p>
+<ul>
+<li>菜品金额（含包装费）： computed =&gt; countPrice</li>
+<li>包装费 ： computed =&gt; packingFee</li>
+</ul>
+<h6 id="2-购物车"><a href="#2-购物车" class="headerlink" title="2. 购物车"></a>2. 购物车</h6><ul>
+<li>购物车存在商品<ul>
+<li>方法： findAllByCart（）</li>
+</ul>
+</li>
+<li>再来一单 <ul>
+<li>方法： getDetail（）</li>
+</ul>
+</li>
+</ul>
+<h6 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h6>
+        </div>
+      </article>
+    </div>
+    <!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+    <!-- Pre or Next -->
+    <div class="nav-links">
+      
+      
+        <div class="nav-next">
+          <a href="/2019/11/11/Git/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
+      
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer-widgets -->
+<div class="footer-widgets">
+  <div class="row inside-wrapper">
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">关于本站</h1>
+        <div class="custom-widget-content">
+          
+          分享生活中的灵感与创意，鼓励阅读，不读书则愚。
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Contact</h1>
+        <div class="widget-text">
+          
+            
+              <a href="https://github.com/BBT-FE/blog" class="icon icon-github" target="_blank">github</a>
+            
+          
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Search</h1>
+        <div class="widget-text">
+          <form onSubmit="return appDaily.bindToggleButton('')">
+            <p>
+              <input type="text" placeholder="search..." id="homeSearchInput">
+            </p>
+            <!-- <input type="submit" value="GO"> -->
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>BBT &copy; 2020</span>
+    
+      <span class="split">|</span>
+      <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with Theme <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank">Daily</a></span>
+    
+  </p>
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+
+
+</body>
+
+</html>
